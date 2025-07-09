@@ -2,7 +2,7 @@ import React from 'react'
 
 const Hero = ()=> {
   return (
-    <section className="relative h-[90vh] bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/assets/nyc.jpg')" }}>
+    <section className="relative h-[90vh] bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/images/new-york.jpg')" }}>
       <div className="absolute inset-0 bg-black/60" />
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 flex flex-col justify-center h-full text-white">
