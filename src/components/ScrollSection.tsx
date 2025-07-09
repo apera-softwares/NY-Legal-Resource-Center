@@ -34,22 +34,24 @@ const ScrollSection = () => {
   }, []);
 
   return (
-    <div className="w-full px-4 lg:px-6">
-      <div className="w-full flex flex-col items-center gap-4 mb-14">
-        <button className="px-4 py-2 font-bold text-xs text-[#3498DB] border-2 border-[#3498DB] rounded-full">
-          Coverage & Injury Info
-        </button>
-        <h2 className="text-5xl text-center font-bold">
-          Auto Accidents in <span>New York</span>
-        </h2>
-        <p className="text-center text-[#758599]">
-          {` Understanding New York's No-Fault Insurance System and Your Rights`}
-        </p>
-      </div>
+    <div className="w-full lg:max-w-5/6 mx-auto">
+      <div className="w-full px-6 lg:px-0">
+        <div className="w-full flex flex-col items-center gap-4 mb-14">
+          <button className="px-4 py-2 font-bold text-xs text-[#3498DB] border-2 border-[#3498DB] rounded-full">
+            Coverage & Injury Info
+          </button>
+          <h2 className="text-5xl text-center font-bold">
+            Auto Accidents in <span>New York</span>
+          </h2>
+          <p className="text-center text-[#758599]">
+            {` Understanding New York's No-Fault Insurance System and Your Rights`}
+          </p>
+        </div>
 
-      <div className="w-full grid grid-cols-12 gap-8 min-h-screen">
-        <ScrollSidebar sections={scrollSections} activeId={activeId} />
-        <ScrollContent />
+        <div className="w-full grid grid-cols-12 gap-8 min-h-screen">
+          <ScrollSidebar sections={scrollSections} activeId={activeId} />
+          <ScrollContent />
+        </div>
       </div>
     </div>
   );

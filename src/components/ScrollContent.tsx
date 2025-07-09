@@ -8,9 +8,9 @@ const ScrollContent = () => {
       {/* image section */}
       <div className="w-full">
         <img
-          src="/assets/images/accident.jpeg"
+          src="/assets/images/accident.jpg"
           alt="Accident"
-          className="w-full h-[412px] object-cover object-center rounded-2xl border"
+          className="w-full h-[412px] object-cover object-center rounded-2xl"
         />
       </div>
       {/* no-fault-system section */}
