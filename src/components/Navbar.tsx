@@ -15,17 +15,17 @@ const Navbar = () => {
 
   return (
     <nav className="w-full fixed top-0 left-0 bg-white shadow-md z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+      <div className="max-w-7xl lg:max-w-5/6 mx-auto px-4 sm:px-6 lg:px-8 lg:py-6 py-3 flex justify-between items-center">
        
         <div className="flex items-center space-x-2">
-          <span className="text-blue-600 font-bold text-xl">NY</span>
+          <span className="text-[#3498DB] font-bold lg:text-6xl text-xl">NY</span>
           <span className="text-sm sm:text-base font-semibold">New York Legal<br className="hidden sm:block" /> Resource Center</span>
         </div>
 
     
         <div className="hidden md:flex space-x-8">
           {navLinks.map((link) => (
-            <a key={link.label} href={link.href} className="text-sm font-medium text-gray-700 hover:text-blue-600">
+            <a key={link.label} href={link.href} className="text-md font-medium text-gray-800 hover:text-[#3498DB]">
               {link.label}
             </a>
           ))}
@@ -35,7 +35,7 @@ const Navbar = () => {
         <div className="hidden md:block">
           <a
             href="#contact"
-            className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-blue-700 transition"
+            className="bg-[#3498DB] text-white px-7 py-3 rounded-md text-sm font-semibold hover:bg-blue-700 transition"
           >
             Free Consultation
           </a>
@@ -56,7 +56,7 @@ const Navbar = () => {
             <a
               key={link.label}
               href={link.href}
-              className="block py-2 text-gray-700 font-medium hover:text-blue-600"
+              className="block py-2 text-gray-700 font-medium hover:text-[#3498DB]"
               onClick={() => setMobileOpen(false)}
             >
               {link.label}
@@ -64,7 +64,7 @@ const Navbar = () => {
           ))}
           <a
             href="#contact"
-            className="mt-2 inline-block w-full text-center bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-blue-700 transition"
+            className="mt-2 inline-block w-full text-center bg-[#3498DB] text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-blue-700 transition"
           >
             Free Consultation
           </a>
