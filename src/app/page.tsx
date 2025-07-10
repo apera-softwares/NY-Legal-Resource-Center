@@ -1,3 +1,5 @@
+import AdditionalResources from "@/components/AdditionalResources";
+import ConsultWithAttorney from "@/components/ConsultWithAttorney";
 import FAQ from "@/components/FAQ";
 import Hero from "@/components/Hero";
 import ScrollSection from "@/components/ScrollSection";
@@ -10,6 +12,8 @@ export default function Home() {
       <FAQ />
       <ScrollSection/>
       <WokerCompensation/>
+      <AdditionalResources/>
+      <ConsultWithAttorney/>
     </>
   );
 }
