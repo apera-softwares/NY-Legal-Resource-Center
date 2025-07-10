@@ -1,0 +1,86 @@
+import React from 'react';
+import { CheckCircle, ChevronDown } from 'lucide-react';
+
+const pointsLeft = [
+    'Evaluate the specific details of your case',
+    'Explain your rights and options under New York law',
+    'Handle paperwork and meet critical deadlines',
+    'Negotiate with insurance companies and opposing parties',
+    'Represent you in hearings, trials, or appeals if necessary',
+    'Maximize your potential compensation',
+];
+
+const pointsRight = [
+    'An auto accident resulting in significant injury or property damage',
+    'A workplace injury or occupational illness',
+    'Experiencing workplace discrimination, harassment, or retaliation',
+    "Being denied workers' compensation benefits",
+    'Wage and hour violations or other labor law issues',
+];
+
+const ConsultWithAttorney = () => {
+    return (
+        <section className="py-16 bg-white">
+            <div className="lg:max-w-5/6 max-w-5xl mx-auto px-4 text-center">
+                <button className="px-4 py-2 font-bold text-xs text-[#3498DB] border-2 border-[#3498DB] rounded-full">
+                    Get Free Consultation
+                </button>
+                <h2 className="text-5xl text-center font-bold mt-4">
+                    Consult with an Attorney
+                </h2>
+                <p className="text-gray-500 mt-4">
+                    Get Expert Legal Advice for Your Specific Situation
+                </p>
+
+                {/* Two Columns */}
+                <div className="mt-12 grid md:grid-cols-2 gap-6 text-left">
+                    {/* Left Box */}
+                    <div className="border border-blue-100 rounded-xl p-6 shadow-sm ">
+                        <div className="flex items-center justify-between mb-4">
+                            <h2 className="text-[#3498DB] font-bold text-2xl">
+                                Why Consult with a Specialized Attorney?
+                            </h2>
+                            <ChevronDown className="text-[#3498DB] w-5 h-5" />
+                        </div>
+                        <p className="text-gray-600 text-lg mb-4 md:w-5/6">
+                            New York&apos;s legal system is complex, and the laws governing auto
+                            accidents, workers&apos; compensation, and labor rights have many
+                            nuances. A specialized attorney can:
+                        </p>
+                        <ul className="space-y-2">
+                            {pointsLeft.map((point, index) => (
+                                <li key={index} className="flex items-start text-lg text-gray-800">
+                                    <CheckCircle className="w-4 h-4 text-[#3498DB] mt-1 mr-2" />
+                                    <span className="font-medium">{point}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Right Box */}
+                    <div className="border border-blue-100 rounded-xl p-6 shadow-sm ">
+                        <div className="flex items-center justify-between mb-4">
+                            <h2 className="text-[#3498DB] font-bold text-2xl">
+                                When to Contact an Attorney
+                            </h2>
+                            <ChevronDown className="text-[#3498DB] w-5 h-5" />
+                        </div>
+                        <p className="text-gray-600 text-lg mb-4 md:w-5/6">
+                            It&apos;s advisable to consult with an attorney as soon as possible after:
+                        </p>
+                        <ul className="space-y-2">
+                            {pointsRight.map((point, index) => (
+                                <li key={index} className="flex items-start text-lg text-gray-800">
+                                    <CheckCircle className="w-4 h-4 text-[#3498DB] mt-1 mr-2" />
+                                    <span className="font-medium">{point}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default ConsultWithAttorney;
