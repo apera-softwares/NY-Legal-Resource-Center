@@ -36,7 +36,7 @@ const ScrollSection = () => {
   return (
     <div id="auto-accidents" className="w-full lg:max-w-5/6 mx-auto ">
       <div className="w-full py-24">
-        <div className="w-full flex flex-col items-center gap-4 mb-14 px-6 lg:px-0">
+        <div className="w-full flex flex-col items-center gap-4 mb-14 px-4 sm:px-6 lg:px-0">
           <button className="px-4 py-2 font-bold text-xs text-[#3498DB] border-2 border-[#3498DB] rounded-full">
             Coverage & Injury Info
           </button>

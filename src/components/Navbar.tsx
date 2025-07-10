@@ -15,15 +15,15 @@ const Navbar = () => {
 
   return (
     <nav className="w-full fixed top-0 left-0 bg-white shadow-md z-50">
-      <div className="max-w-7xl lg:max-w-5/6 lg:mx-auto px-4 lg:py-6 py-3 flex justify-between items-center">
+      <div className="max-w-7xl lg:max-w-5/6 lg:mx-auto px-4 sm:px-6 lg:px-0 py-3 flex justify-between items-center">
        
         <div className="flex items-center space-x-2">
-          <span className="text-[#3498DB] font-bold lg:text-6xl text-xl">NY</span>
+          <span className="text-[#3498DB] font-bold lg:text-6xl md:text-3xl sm:text-2xl ">NY</span>
           <span className="text-sm sm:text-base font-semibold">New York Legal<br className="hidden sm:block" /> Resource Center</span>
         </div>
 
     
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden lg:flex space-x-8">
           {navLinks.map((link) => (
             <Link key={link.label} href={link.href} className="text-md font-medium text-gray-800 hover:text-[#3498DB]">
               {link.label}
@@ -32,7 +32,7 @@ const Navbar = () => {
         </div>
 
        
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <Link
             href="#contact"
             className="bg-[#3498DB] text-white px-7 py-3 rounded-md text-sm font-semibold hover:bg-[#2983c0] transition"
@@ -42,7 +42,7 @@ const Navbar = () => {
         </div>
 
       
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <button onClick={() => setMobileOpen(!mobileOpen)}>
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -51,7 +51,7 @@ const Navbar = () => {
 
       
       {mobileOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200 px-4 pb-4">
+        <div className="lg:hidden bg-white border-t border-gray-200 px-4 pb-4">
           {navLinks.map((link) => (
             <Link
               key={link.label}

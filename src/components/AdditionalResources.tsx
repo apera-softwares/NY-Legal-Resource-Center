@@ -80,12 +80,12 @@ const resources = [
 const AdditionalResources = () => {
   return (
     <section id="resources" className="py-16 bg-gray-50">
-      <div className="lg:max-w-5/6 max-w-5xl lg:mx-auto px-4">
+      <div className="lg:max-w-5/6 max-w-5xl lg:mx-auto px-4 sm:px-6 lg:px-0">
         <div className="text-center mb-12">
           <button className="px-4 py-2 font-bold text-xs text-[#3498DB] border-2 border-[#3498DB] rounded-full">
             Resources
           </button>
-          <h2 className="text-5xl text-center font-bold mt-4">
+          <h2 className="text-3xl lg:text-5xl text-center font-bold mt-4">
             Additional Resources
           </h2>
           <p className="text-gray-600 mt-4">

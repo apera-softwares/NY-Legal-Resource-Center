@@ -53,7 +53,7 @@ const WokersCompensation = () => {
   return (
     <div id="workers-compensation" className="w-full bg-[#FAFAFA]">
       <div className="w-full lg:max-w-5/6  mx-auto">
-        <div className="w-full px-6 lg:px-0  py-24 ">
+        <div className="w-full px-4 sm:px-6 lg:px-0  py-24 ">
           <div className="w-full flex flex-col items-center gap-4 mb-14">
             <button className="px-4 py-2 font-bold text-xs text-[#3498DB] border-2 border-[#3498DB] rounded-full">
               {`Workers' Compensation`}

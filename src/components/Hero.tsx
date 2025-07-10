@@ -8,7 +8,7 @@ const Hero = ()=> {
     >
       <div className="absolute inset-0 bg-black/60" />
 
-      <div className="relative z-10 lg:max-w-5/6 max-w-5xl lg:mx-auto px-4  flex flex-col justify-center h-full text-white">
+      <div className="relative z-10 lg:max-w-5/6 max-w-5xl lg:mx-auto px-4 sm:px-6 lg:px-0  flex flex-col justify-center h-full text-white">
         <span className="inline-block mb-4 px-3 py-2 text-sm bg-transparent border-2 border-[#3498DB] text-[#3498DB] rounded-full w-max font-semibold">
           Legal Insights
         </span>

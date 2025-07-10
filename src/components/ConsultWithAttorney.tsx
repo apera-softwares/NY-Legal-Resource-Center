@@ -25,11 +25,11 @@ const ConsultWithAttorney = () => {
 
   return (
     <section id="consultation" className="py-16 bg-white">
-      <div className="lg:max-w-5/6 max-w-5xl mx-auto px-4 text-center">
+      <div className="lg:max-w-5/6 max-w-5xl mx-auto px-4 sm:px-6 lg:px-0 text-center">
         <button className="px-4 py-2 font-bold text-xs text-[#3498DB] border-2 border-[#3498DB] rounded-full">
           Get Free Consultation
         </button>
-        <h2 className="text-5xl font-bold mt-4">Consult with an Attorney</h2>
+        <h2 className="text-3xl lg:text-5xl font-bold mt-4">Consult with an Attorney</h2>
         <p className="text-gray-500 mt-4">
           Get Expert Legal Advice for Your Specific Situation
         </p>
