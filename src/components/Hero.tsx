@@ -35,11 +35,11 @@ const Hero = ()=> {
           options with confidence.
         </p>
 
-        <div className="mt-8 flex flex-wrap gap-4">
-          <button className="bg-[#3498DB] text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition">
+        <div className="mt-12 flex flex-wrap gap-4">
+          <button className="bg-[#3498DB] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#2983c0] transition cursor-pointer">
             Get Free Consultation
           </button>
-          <button className="border border-white text-white px-6 py-3 rounded-md font-semibold hover:bg-white hover:text-black transition">
+          <button className="border border-white text-white px-6 py-3 rounded-md font-semibold hover:bg-white hover:text-black transition cursor-pointer">
             Watch Attorney Video
           </button>
         </div>
