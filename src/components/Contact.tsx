@@ -1,13 +1,13 @@
 import React from 'react';
 import {
-    FaPhoneAlt,
-    FaEnvelope,
-    FaMapMarkerAlt,
     FaFacebookF,
     FaTwitter,
     FaInstagram,
     FaYoutube,
 } from 'react-icons/fa';
+import { FiPhoneCall, FiMail } from "react-icons/fi";
+import { GrLocation } from "react-icons/gr";
+
 
 const Contact = () => {
     return (
@@ -64,7 +64,7 @@ const Contact = () => {
 
                             <button
                                 type="submit"
-                                className="bg-[#3498DB] text-white font-semibold px-6 py-3 rounded-md hover:bg-blue-600 transition"
+                                className="bg-[#3498DB] text-white font-semibold px-6 py-3 rounded-md hover:bg-[#2983c0] transition cursor-pointer"
                             >
                                 Send Message
                             </button>
@@ -79,7 +79,7 @@ const Contact = () => {
                             <div className="space-y-6 text-gray-700 text-md">
                                 <div className="flex items-start gap-3">
                                     <div className="p-3 bg-[#3498DB] text-white rounded-full">
-                                        <FaPhoneAlt size={26} />
+                                        <FiPhoneCall size={26} />
                                     </div>
                                     <div>
                                         <p className="text-sm text-[#3498DB]">Phone No:</p>
@@ -89,7 +89,7 @@ const Contact = () => {
 
                                 <div className="flex items-start gap-3">
                                     <div className="p-3 bg-[#3498DB] text-white rounded-full">
-                                        <FaEnvelope size={26} />
+                                        <FiMail size={26} />
                                     </div>
                                     <div>
                                         <p className="text-sm text-[#3498DB]">Email:</p>
@@ -99,7 +99,7 @@ const Contact = () => {
 
                                 <div className="flex items-start gap-3">
                                     <div className="p-3 bg-[#3498DB] text-white rounded-full text-lg">
-                                        <FaMapMarkerAlt size={26} />
+                                        <GrLocation size={26} />
                                     </div>
                                     <div>
                                         <p className="text-sm text-[#3498DB]">Address:</p>
