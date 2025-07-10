@@ -1,5 +1,6 @@
 import AdditionalResources from "@/components/AdditionalResources";
 import ConsultWithAttorney from "@/components/ConsultWithAttorney";
+import Contact from "@/components/Contact";
 import Hero from "@/components/Hero";
 import ScrollSection from "@/components/scroll-section/ScrollSection";
 import WokerCompensation from "@/components/compensation-tab/WokerCompensation";
@@ -14,6 +15,7 @@ export default function Home() {
       <LaborLaws/>
       <AdditionalResources/>
       <ConsultWithAttorney/>
+      <Contact/>
     </>
   );
 }
