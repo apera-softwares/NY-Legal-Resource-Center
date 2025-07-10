@@ -4,5 +4,5 @@ export const scrollSections = [
   { id: "serious-injury", label: "Serious Injury" },
   { id: "legal-deadlines", label: "Legal Deadlines" },
   { id: "negligence", label: "Negligence" },
-  { id: "2023-pdates", label: "2023 Updates" },
+  { id: "2023-updates", label: "2023 Updates" },
 ];
