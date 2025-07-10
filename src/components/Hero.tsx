@@ -29,7 +29,7 @@ const Hero = ()=> {
           From auto accidents to labor claims, explore your legal options with confidence.
         </p>
 
-        <div className="mt-8 flex flex-wrap gap-4">
+        <div className="mt-12 flex flex-wrap gap-4">
           <button className="bg-[#3498DB] text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition">
             Get Free Consultation
           </button>
