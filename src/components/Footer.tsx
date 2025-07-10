@@ -18,7 +18,7 @@ const Footer = () => {
                     NY
                   </span>
                   <p className="font-bold text-base lg:text-lg text-white">
-                    New York Legal Resource Center
+                    New York Legal <br /> Resource Center
                   </p>
                 </a>
               </div>
@@ -134,7 +134,7 @@ const Footer = () => {
                     title=""
                     className="flex items-start gap-2 text-sm text-white transition-all duration-200 hover:text-[#3498DB]"
                   >
-                    <FiPhoneCall className="shrink-0 text-white mt-1" />
+                    <FiPhoneCall className="text-lg shrink-0 text-[#3498DB] mt-0.5" />
                     (212) 555-1234
                   </a>
                 </li>
@@ -145,7 +145,7 @@ const Footer = () => {
                     title=""
                     className="flex items-start gap-2 text-sm text-white transition-all duration-200 hover:text-[#3498DB]"
                   >
-                    <FiMail className="shrink-0 text-white mt-1" />
+                    <FiMail className="text-lg shrink-0 text-[#3498DB] mt-0.5" />
                     info@nylegalresource.org
                   </a>
                 </li>
@@ -156,7 +156,7 @@ const Footer = () => {
                     title=""
                     className="flex items-start gap-2 text-sm text-white transition-all duration-200 hover:text-[#3498DB]"
                   >
-                    <GrLocation className="shrink-0 text-white mt-1" />
+                    <GrLocation className="text-lg shrink-0 text-[#3498DB] mt-0.5" />
                     123 Legal Avenue, New York, NY 10001
                   </a>
                 </li>
