@@ -1,20 +1,18 @@
 import React from "react";
-import { CircleCheck } from "lucide-react";
-const EligibilityRequirements = () => {
+import { FaRegCircleCheck } from "react-icons/fa6";
+const ExtemptOccupations = () => {
   return (
     <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
       <div className="w-full space-y-6">
-        <h2 className="text-2xl lg:text-3xl font-bold ">
-          Eligibility Requirements
-        </h2>
+        <h2 className="text-2xl lg:text-3xl font-bold ">Exempt Occupations</h2>
         <p className="text-base lg:text-lg text-[#758599] ">
-         {` New York workers' compensation provides several types of benefits:`}
+          {` New York workers' compensation provides several types of benefits:`}
         </p>
         <div className="w-full">
           <ul className=" space-y-3">
             <li className="flex items-start gap-2.5">
               <span className=" mt-1.5">
-                <CircleCheck size={16} color="#3498DB" />
+                <FaRegCircleCheck className="text-base text-[#3498DB] shrink-0" />
               </span>
               <span className=" text-[#758599]">
                 <strong className="text-black">Medical Benefits : </strong>
@@ -25,7 +23,7 @@ const EligibilityRequirements = () => {
             </li>
             <li className="flex items-start gap-2.5">
               <span className=" mt-1.5">
-                <CircleCheck size={16} color="#3498DB" />
+                <FaRegCircleCheck className="text-base text-[#3498DB] shrink-0" />
               </span>
               <span className=" text-[#758599]">
                 <strong className="text-black">
@@ -38,7 +36,7 @@ const EligibilityRequirements = () => {
             </li>
             <li className="flex items-start gap-2.5">
               <span className=" mt-1.5">
-                <CircleCheck size={16} color="#3498DB" />
+                <FaRegCircleCheck className="text-base text-[#3498DB] shrink-0" />
               </span>
               <span className=" text-[#758599]">
                 <strong className="text-black">
@@ -51,7 +49,7 @@ const EligibilityRequirements = () => {
             </li>
             <li className="flex items-start gap-2.5">
               <span className=" mt-1.5">
-                <CircleCheck size={16} color="#3498DB" />
+                <FaRegCircleCheck className="text-base text-[#3498DB] shrink-0" />
               </span>
               <span className=" text-[#758599]">
                 <strong className="text-black">Death Benefits : </strong>
@@ -66,7 +64,7 @@ const EligibilityRequirements = () => {
       </div>
       <div className="w-full">
         <img
-          src="/assets/images/construction-worker-2.jpg"
+          src="/assets/images/construction-worker-4.jpg"
           alt=""
           className="w-full lg:w-[512px] h-[512px] border border-[#3498DB] rounded-2xl lg:ml-auto"
         />
@@ -75,4 +73,4 @@ const EligibilityRequirements = () => {
   );
 };
 
-export default EligibilityRequirements;
+export default ExtemptOccupations;

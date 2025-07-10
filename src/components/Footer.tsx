@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { FiPhoneCall } from "react-icons/fi";
 import { FiMail } from "react-icons/fi";
 import { GrLocation } from "react-icons/gr";
@@ -7,20 +8,20 @@ import { AiOutlineMail } from "react-icons/ai";
 
 const Footer = () => {
   return (
-    <div className="w-full bg-[#05162A] rounded-t-2xl lg:rounded-t-3xl mt-10">
+    <section className="w-full bg-[#05162A] rounded-t-2xl lg:rounded-t-3xl mt-10">
       <div className="w-full lg:max-w-5/6 mx-auto">
-        <div className="w-full px-6 lg:px-0">
+        <div className="w-full px-4 sm:px-6 lg:px-0">
           <div className="grid grid-cols-2 md:col-span-3 lg:grid-cols-6 gap-y-16 gap-x-12  py-14">
             <div className="col-span-2 md:col-span-3 lg:col-span-2 lg:pr-6">
               <div className="w-full mb-4">
-                <a href="/" className="flex items-center gap-3 cursor-pointer">
+                <Link href="/" className="flex items-center gap-3 cursor-pointer">
                   <span className="text-[#3498DB] font-bold lg:text-6xl text-4xl -mt-2">
                     NY
                   </span>
                   <p className="font-bold text-base lg:text-lg text-white">
-                    New York Legal Resource Center
+                    New York Legal <br /> Resource Center
                   </p>
-                </a>
+                </Link>
               </div>
 
               <p className="text-sm leading-normal text-white mb-6">
@@ -30,37 +31,37 @@ const Footer = () => {
 
               <ul className="flex items-center space-x-3">
                 <li>
-                  <a
+                  <Link
                     href="#"
                     className="flex items-center justify-center text-white transition-all duration-200 bg-[#3498DB] rounded-full w-7 h-7"
                   >
                     <FaFacebookF className="w-4 h-4 text-[#05162A]" />
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="#"
                     className="flex items-center justify-center text-white transition-all duration-200 bg-[#3498DB] rounded-full w-7 h-7"
                   >
                     <FaTwitter className="w-4 h-4 text-[#05162A]" />
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="#"
                     className="flex items-center justify-center text-white transition-all duration-200 bg-[#3498DB] rounded-full w-7 h-7 "
                   >
                     <FaInstagram className="w-4 h-4 text-[#05162A]" />
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
-                  <a
+                  <Link
                     href="#"
                     className="flex items-center justify-center text-white transition-all duration-200 bg-[#3498DB] rounded-full w-7 h-7 "
                   >
                     <FaYoutube className="w-4 h-4 text-[#05162A] " />
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -72,52 +73,47 @@ const Footer = () => {
 
               <ul className=" space-y-3">
                 <li>
-                  <a
-                    href="#"
-                    title=""
+                  <Link
+                    href="#auto-accidents"
                     className="flex text-sm text-white transition-all duration-200 hover:text-[#3498DB]"
                   >
                     Auto Accidents
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
-                  <a
-                    href="#"
-                    title=""
+                  <Link
+                    href="#workers-compensation"
                     className="flex text-sm text-white transition-all duration-200 hover:text-[#3498DB]"
                   >
                     {`Workers' Compensation`}
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
-                  <a
-                    href="#"
-                    title=""
+                  <Link
+                    href="#labor-laws"
                     className="flex text-sm text-white transition-all duration-200 hover:text-[#3498DB]"
                   >
                     Labor Laws
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
-                  <a
-                    href="#"
-                    title=""
+                  <Link
+                    href="#consultation"
                     className="flex text-sm text-white transition-all duration-200 hover:text-[#3498DB]"
                   >
                     Consultation
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    title=""
+                  <Link
+                    href="#resources"
                     className="flex text-sm text-white transition-all duration-200 hover:text-[#3498DB]"
                   >
                     Resources
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -129,36 +125,30 @@ const Footer = () => {
 
               <ul className=" space-y-3">
                 <li>
-                  <a
-                    href="#"
-                    title=""
-                    className="flex items-start gap-2 text-sm text-white transition-all duration-200 hover:text-[#3498DB]"
+                  <span
+                    className="flex items-start gap-2 text-sm text-white"
                   >
-                    <FiPhoneCall className="shrink-0 text-white mt-1" />
+                    <FiPhoneCall className="text-lg shrink-0 text-[#3498DB] mt-0.5" />
                     (212) 555-1234
-                  </a>
+                  </span>
                 </li>
 
                 <li>
-                  <a
-                    href="#"
-                    title=""
-                    className="flex items-start gap-2 text-sm text-white transition-all duration-200 hover:text-[#3498DB]"
+                  <span
+                    className="flex items-start gap-2 text-sm text-white"
                   >
-                    <FiMail className="shrink-0 text-white mt-1" />
+                    <FiMail className="text-lg shrink-0 text-[#3498DB] mt-0.5" />
                     info@nylegalresource.org
-                  </a>
+                  </span>
                 </li>
 
                 <li>
-                  <a
-                    href="#"
-                    title=""
-                    className="flex items-start gap-2 text-sm text-white transition-all duration-200 hover:text-[#3498DB]"
+                  <span
+                    className="flex items-start gap-2 text-sm text-white"
                   >
-                    <GrLocation className="shrink-0 text-white mt-1" />
+                    <GrLocation className="text-lg shrink-0 text-[#3498DB] mt-0.5" />
                     123 Legal Avenue, New York, NY 10001
-                  </a>
+                  </span>
                 </li>
               </ul>
             </div>
@@ -195,53 +185,57 @@ const Footer = () => {
             <div className="flex items-center justify-center flex-col lg:justify-between lg:flex-row gap-2">
               <span className="text-xs text-white ">
                 ©
-                <a href="https://pagedone.io/">
+                <Link
+                  href="/"
+                  className=" transition-all duration-200 hover:text-[#3498DB]"
+                >
+                  {" "}
                   2025 NY Legal Resource Center.
-                </a>{" "}
+                </Link>{" "}
                 All rights reserved.
               </span>
               <ul className="flex items-center gap-2  -mt-0.5">
                 <li>
-                  <a
+                  <Link
                     href="/"
                     className="text-xs text-white hover:text-[#3498DB] transition-colors duration-300"
                   >
                     Terms
-                  </a>
+                  </Link>
                 </li>
                 <li className="h-3 w-[1px] bg-white -mb-1.5"></li>
                 <li>
-                  <a
+                  <Link
                     href="/"
                     className="text-xs text-white hover:text-[#3498DB] transition-colors duration-300"
                   >
                     Privacy
-                  </a>
+                  </Link>
                 </li>
                 <li className="h-3 w-[1px] bg-white -mb-1.5"></li>
                 <li>
-                  <a
+                  <Link
                     href="/"
                     className="text-xs text-white hover:text-[#3498DB] transition-colors duration-300"
                   >
                     Arbitration
-                  </a>
+                  </Link>
                 </li>
                 <li className="h-3 w-[1px] bg-white -mb-1.5"></li>
                 <li>
-                  <a
+                  <Link
                     href="/"
                     className="text-xs text-white hover:text-[#3498DB] transition-colors duration-300"
                   >
                     Cookies Policy
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

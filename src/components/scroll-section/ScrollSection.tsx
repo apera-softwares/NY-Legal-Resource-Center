@@ -34,14 +34,14 @@ const ScrollSection = () => {
   }, []);
 
   return (
-    <div className="w-full lg:max-w-5/6 mx-auto ">
+    <section id="auto-accidents" className="w-full lg:max-w-5/6 mx-auto ">
       <div className="w-full py-24">
-        <div className="w-full flex flex-col items-center gap-4 mb-14 px-6 lg:px-0">
+        <div className="w-full flex flex-col items-center gap-4 mb-14 px-4 sm:px-6 lg:px-0">
           <button className="px-4 py-2 font-bold text-xs text-[#3498DB] border-2 border-[#3498DB] rounded-full">
             Coverage & Injury Info
           </button>
           <h2 className="text-3xl lg:text-5xl text-center font-bold">
-            Auto Accidents in <span>New York</span>
+            Auto Accidents in <span className="text-[#3498DB]">New York</span>
           </h2>
           <p className="text-center text-[#758599]">
             {` Understanding New York's No-Fault Insurance System and Your Rights`}
@@ -53,7 +53,7 @@ const ScrollSection = () => {
           <ScrollContent />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

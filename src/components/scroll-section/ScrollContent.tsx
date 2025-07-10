@@ -1,10 +1,11 @@
 import React from "react";
-import { CircleCheck } from "lucide-react";
+import { FaRegCircleCheck } from "react-icons/fa6";
+
 
 
 const ScrollContent = () => {
   return (
-    <div className="w-full col-span-12 lg:col-span-9 px-6 lg:px-0">
+    <div className="w-full col-span-12 lg:col-span-9 px-4 sm:px-6 lg:px-0">
       {/* image section */}
       <div className="w-full">
         <img
@@ -20,7 +21,7 @@ const ScrollContent = () => {
       >
         <h2 className="font-bold text-2xl lg:text-3xl mb-4">
           New York
-          <span className="text-[#3498DB]">No-Fault Insurance System</span>
+          <span className="text-[#3498DB]"> No-Fault Insurance System</span>
         </h2>
         <p className="text-base lg:text-lg text-[#758599] leading-normal">
           {`New York operates under a "No-Fault" insurance system, which means
@@ -41,28 +42,28 @@ const ScrollContent = () => {
         <div className="">
           <ul className="space-y-2.5">
             <li className="flex items-center flex-wrap">
-              <CircleCheck size={16} color="#3498DB" />
+              <FaRegCircleCheck className="text-sm text-[#3498DB] shrink-0 mt-1" />
               <span className="font-bold ml-3">
                 Basic Economic Loss Coverage :
               </span>{" "}
               <span className="text-[#758599]">{`Up to $50,000 per person`}</span>
             </li>
             <li className="flex items-center flex-wrap">
-              <CircleCheck size={16} color="#3498DB" />
+              <FaRegCircleCheck className="text-sm text-[#3498DB] shrink-0 mt-1" />
               <span className="font-bold ml-3"> Medical Expenses :</span>
               <span className="text-[#758599]">
                 All necessary medical and rehabilitation expenses
               </span>
             </li>
             <li className="flex items-center flex-wrap">
-              <CircleCheck size={16} color="#3498DB" />
+              <FaRegCircleCheck className="text-sm text-[#3498DB] shrink-0 mt-1" />
               <span className="font-bold ml-3">Lost Wages :</span>
               <span className="text-[#758599]">
                 {`Up to $2,000 per month for up to three years`}
               </span>
             </li>
             <li className="flex items-center flex-wrap">
-              <CircleCheck size={16} color="#3498DB" />
+              <FaRegCircleCheck className="text-sm text-[#3498DB] shrink-0 mt-1" />
               <span className="font-bold ml-3">
                 Other Reasonable Expenses :
               </span>{" "}
@@ -71,7 +72,7 @@ const ScrollContent = () => {
               </span>
             </li>
             <li className="flex items-center flex-wrap">
-              <CircleCheck size={16} color="#3498DB" />
+              <FaRegCircleCheck className="text-sm text-[#3498DB] shrink-0 mt-1" />
               <span className="font-bold ml-3">Death Benefit :</span>
               <span className="text-[#758599]">
                 {`$2,000 in addition to the basic economic loss coverage`}
@@ -96,49 +97,49 @@ const ScrollContent = () => {
         <div className="">
           <ul className="space-y-1">
             <li className="flex items-center flex-wrap">
-              <CircleCheck size={16} color="#3498DB" />
+              <FaRegCircleCheck className="text-sm text-[#3498DB] shrink-0 mt-1" />
               <span className="text-[#758599] ml-3">
                 Significant disfigurement
               </span>
             </li>
             <li className="flex items-center flex-wrap">
-              <CircleCheck size={16} color="#3498DB" />
+              <FaRegCircleCheck className="text-sm text-[#3498DB] shrink-0 mt-1" />
               <span className="text-[#758599] ml-3">Death</span>
             </li>
             <li className="flex items-center flex-wrap">
-              <CircleCheck size={16} color="#3498DB" />
+              <FaRegCircleCheck className="text-sm text-[#3498DB] shrink-0 mt-1" />
               <span className="text-[#758599] ml-3">Fracture</span>
             </li>
             <li className="flex items-center flex-wrap">
-              <CircleCheck size={16} color="#3498DB" />
+              <FaRegCircleCheck className="text-sm text-[#3498DB] shrink-0 mt-1" />
               <span className="text-[#758599] ml-3">Loss of a fetus</span>
             </li>
             <li className="flex items-center flex-wrap">
-              <CircleCheck size={16} color="#3498DB" />
+              <FaRegCircleCheck className="text-sm text-[#3498DB] shrink-0 mt-1" />
               <span className="text-[#758599] ml-3">Dismemberment</span>
             </li>
             <li className="flex items-center flex-wrap">
-              <CircleCheck size={16} color="#3498DB" />
+              <FaRegCircleCheck className="text-sm text-[#3498DB] shrink-0 mt-1" />
               <span className="text-[#758599] ml-3">
                 Significant limitation of use of a body function or system
               </span>
             </li>
             <li className="flex items-center flex-wrap">
-              <CircleCheck size={16} color="#3498DB" />
+              <FaRegCircleCheck className="text-sm text-[#3498DB] shrink-0 mt-1" />
               <span className="text-[#758599] ml-3">
                 Permanent loss of use of a body organ, member, function, or
                 system
               </span>
             </li>
             <li className="flex items-center flex-wrap">
-              <CircleCheck size={16} color="#3498DB" />
+              <FaRegCircleCheck className="text-sm text-[#3498DB] shrink-0 mt-1" />
               <span className="text-[#758599] ml-3">
                 Permanent consequential limitation of use of a body organ or
                 member
               </span>
             </li>
             <li className="flex items-center flex-wrap">
-              <CircleCheck size={16} color="#3498DB" />
+              <FaRegCircleCheck className="text-sm text-[#3498DB] shrink-0 mt-1 " />
               <span className="text-[#758599] ml-3">
                 {`Medically determined injury or impairment of a non-permanent
                 nature which prevents the injured person from performing
@@ -168,24 +169,22 @@ const ScrollContent = () => {
         <div className="">
           <ul className="space-y-2.5">
             <li className="flex items-center flex-wrap">
-              <CircleCheck size={16} color="#3498DB" />
-              <span className="font-bold ml-3">
-                No-Fault Application :
-              </span>{" "}
+              <FaRegCircleCheck className="text-sm text-[#3498DB] shrink-0 mt-1" />
+              <span className="font-bold ml-3">No-Fault Application :</span>{" "}
               <span className="text-[#758599]">
                 Must be filed within 30 days of the accident
               </span>
             </li>
 
             <li className="flex items-center flex-wrap">
-              <CircleCheck size={16} color="#3498DB" />
+              <FaRegCircleCheck className="text-sm text-[#3498DB] shrink-0 mt-1" />
               <span className="font-bold ml-3">Medical Bills :</span>
               <span className="text-[#758599]">
                 Must be submitted within 45 days of treatment
               </span>
             </li>
             <li className="flex items-center flex-wrap">
-              <CircleCheck size={16} color="#3498DB" />
+              <FaRegCircleCheck className="text-sm text-[#3498DB] shrink-0 mt-1" />
               <span className="font-bold ml-3">Lost Wage Claims :</span>
               <span className="text-[#758599]">
                 : Must be submitted within 90 days
