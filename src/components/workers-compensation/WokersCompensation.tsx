@@ -51,7 +51,7 @@ const WokersCompensation = () => {
   const activeTab = tabs.find((tab) => tab.id === activeTabId);
 
   return (
-    <div id="workers-compensation" className="w-full bg-[#FAFAFA]">
+    <section id="workers-compensation" className="w-full bg-[#FAFAFA]">
       <div className="w-full lg:max-w-5/6  mx-auto">
         <div className="w-full px-4 sm:px-6 lg:px-0  py-24 ">
           <div className="w-full flex flex-col items-center gap-4 mb-14">
@@ -84,7 +84,7 @@ const WokersCompensation = () => {
           <div className="w-full">{activeTab?.content}</div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

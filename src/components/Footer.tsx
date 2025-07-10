@@ -8,7 +8,7 @@ import { AiOutlineMail } from "react-icons/ai";
 
 const Footer = () => {
   return (
-    <div className="w-full bg-[#05162A] rounded-t-2xl lg:rounded-t-3xl mt-10">
+    <section className="w-full bg-[#05162A] rounded-t-2xl lg:rounded-t-3xl mt-10">
       <div className="w-full lg:max-w-5/6 mx-auto">
         <div className="w-full px-4 sm:px-6 lg:px-0">
           <div className="grid grid-cols-2 md:col-span-3 lg:grid-cols-6 gap-y-16 gap-x-12  py-14">
@@ -235,7 +235,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
