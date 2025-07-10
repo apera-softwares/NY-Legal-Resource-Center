@@ -195,10 +195,13 @@ const Footer = () => {
             <div className="flex items-center justify-center flex-col lg:justify-between lg:flex-row gap-2">
               <span className="text-xs text-white ">
                 ©
-                <a href="https://pagedone.io/">
-                  2025 NY Legal Resource Center.
-                </a>{" "}
-                All rights reserved.
+                <a
+                  href="/"
+                  className=" transition-all duration-200 hover:text-[#3498DB]"
+                >
+                 {" "} 2025 NY Legal Resource Center.
+                </a>
+               {" "} All rights reserved.
               </span>
               <ul className="flex items-center gap-2  -mt-0.5">
                 <li>
