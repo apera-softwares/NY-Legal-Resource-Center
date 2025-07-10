@@ -15,7 +15,7 @@ const Navbar = () => {
 
   return (
     <nav className="w-full fixed top-0 left-0 bg-white shadow-md z-50">
-      <div className="max-w-7xl lg:max-w-5/6 mx-auto px-4 sm:px-6 lg:px-8 lg:py-6 py-3 flex justify-between items-center">
+      <div className="max-w-7xl lg:max-w-5/6 lg:mx-auto px-4 lg:py-6 py-3 flex justify-between items-center">
        
         <div className="flex items-center space-x-2">
           <span className="text-[#3498DB] font-bold lg:text-6xl text-xl">NY</span>
