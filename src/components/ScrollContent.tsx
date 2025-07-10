@@ -4,7 +4,7 @@ import { CircleCheck } from "lucide-react";
 
 const ScrollContent = () => {
   return (
-    <div className="w-full col-span-12 lg:col-span-9">
+    <div className="w-full col-span-12 lg:col-span-9 px-6 lg:px-0">
       {/* image section */}
       <div className="w-full">
         <img
