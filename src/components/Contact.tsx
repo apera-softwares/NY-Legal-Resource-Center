@@ -64,7 +64,7 @@ const Contact = () => {
 
                             <button
                                 type="submit"
-                                className="bg-[#3498DB] text-white font-semibold px-6 py-3 rounded-md hover:bg-blue-600 transition"
+                                className="bg-[#3498DB] text-white font-semibold px-6 py-3 rounded-md hover:bg-[#2983c0] transition cursor-pointer"
                             >
                                 Send Message
                             </button>
