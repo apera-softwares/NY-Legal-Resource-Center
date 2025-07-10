@@ -3,7 +3,7 @@ import ConsultWithAttorney from "@/components/ConsultWithAttorney";
 import Contact from "@/components/Contact";
 import Hero from "@/components/Hero";
 import ScrollSection from "@/components/scroll-section/ScrollSection";
-import WokerCompensation from "@/components/compensation-tab/WokerCompensation";
+import WokersCompensation from "@/components/workers-compensation/WokersCompensation";
 import LaborLaws from "@/components/labor-laws/LaborLaws";
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <Hero />
       <ScrollSection/>
-      <WokerCompensation/>
+      <WokersCompensation/>
       <LaborLaws/>
       <AdditionalResources/>
       <ConsultWithAttorney/>

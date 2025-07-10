@@ -45,18 +45,18 @@ export const tabs: TabItem[] = [
   },
 ];
 
-const WokerCompensation = () => {
+const WokersCompensation = () => {
   const [activeTabId, setActiveTabId] = useState(tabs[0]?.id);
 
   const activeTab = tabs.find((tab) => tab.id === activeTabId);
 
   return (
-    <div className="w-full bg-[#FAFAFA]">
+    <div id="workers-compensation" className="w-full bg-[#FAFAFA]">
       <div className="w-full lg:max-w-5/6  mx-auto">
         <div className="w-full px-6 lg:px-0  py-24 ">
           <div className="w-full flex flex-col items-center gap-4 mb-14">
             <button className="px-4 py-2 font-bold text-xs text-[#3498DB] border-2 border-[#3498DB] rounded-full">
-              {`WokerCompensation`}
+              {`Workers' Compensation`}
             </button>
             <h2 className=" text-3xl lg:text-5xl text-center font-bold">
               {`Workers' Compensation in`}{" "}
@@ -88,4 +88,4 @@ const WokerCompensation = () => {
   );
 };
 
-export default WokerCompensation;
+export default WokersCompensation;

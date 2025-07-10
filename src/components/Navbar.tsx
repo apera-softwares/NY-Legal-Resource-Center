@@ -7,11 +7,11 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   const navLinks = [
-    { label: 'Auto Accidents', href: '#auto-accidents' },
-    { label: "Workers' Compensation", href: '#workers-comp' },
-    { label: 'Labor Laws', href: '#labor-laws' },
-    { label: 'Resources', href: '#resources' },
-  ]
+    { label: "Auto Accidents", href: "#auto-accidents" },
+    { label: "Workers' Compensation", href: "#workers-compensation" },
+    { label: "Labor Laws", href: "#labor-laws" },
+    { label: "Resources", href: "#resources" },
+  ];
 
   return (
     <nav className="w-full fixed top-0 left-0 bg-white shadow-md z-50">
