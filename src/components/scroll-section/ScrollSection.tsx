@@ -41,7 +41,7 @@ const ScrollSection = () => {
             Coverage & Injury Info
           </button>
           <h2 className="text-3xl lg:text-5xl text-center font-bold">
-            Auto Accidents in <span>New York</span>
+            Auto Accidents in <span className="text-[#3498DB]">New York</span>
           </h2>
           <p className="text-center text-[#758599]">
             {` Understanding New York's No-Fault Insurance System and Your Rights`}

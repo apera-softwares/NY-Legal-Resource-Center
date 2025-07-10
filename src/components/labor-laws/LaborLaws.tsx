@@ -12,7 +12,8 @@ const LaborLaws = () => {
             laws
           </button>
           <h2 className="text-3xl lg:text-5xl text-center font-bold">
-            New York <span> Labor Laws</span>
+            <span className="text-[#3498DB]">New York </span>
+            Labor Laws
           </h2>
           <p className="text-center text-[#758599]">
             {`Understanding Workplace Rights and Protections`}
@@ -20,7 +21,11 @@ const LaborLaws = () => {
         </div>
         <div className="w-full rounded-2xl lg:rounded-3xl p-6 lg:p-8 space-y-6 border border-[#05588E29]">
           {laborLaws.map((lawItem) => (
-            <LaborLawItem key={lawItem.id} title={lawItem.title} content={lawItem.content} />
+            <LaborLawItem
+              key={lawItem.id}
+              title={lawItem.title}
+              content={lawItem.content}
+            />
           ))}
         </div>
       </div>
