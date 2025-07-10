@@ -18,7 +18,7 @@ const ScrollContent = () => {
         id="no-fault-system"
         className="w-full pt-8 pb-12 border-b border-[#05588E1F]"
       >
-        <h2 className="font-bold text-2xl sm:text-3xl mb-4">
+        <h2 className="font-bold text-2xl lg:text-3xl mb-4">
           New York
           <span className="text-[#3498DB]">No-Fault Insurance System</span>
         </h2>
@@ -35,7 +35,7 @@ const ScrollContent = () => {
         id="key-coverages"
         className="w-full py-12 border-b border-[#05588E1F]"
       >
-        <h2 className="font-bold text-2xl sm:text-3xl mb-6">
+        <h2 className="font-bold text-2xl lg:text-3xl mb-6">
           Key Components of NY No-Fault Coverage
         </h2>
         <div className="">
@@ -85,7 +85,7 @@ const ScrollContent = () => {
         id="serious-injury"
         className="w-full py-12 border-b border-[#05588E1F]"
       >
-        <h2 className="font-bold text-2xl sm:text-3xl mb-4">
+        <h2 className="font-bold text-2xl lg:text-3xl mb-4">
           Serious Injury Threshold
         </h2>
         <p className="text-base lg:text-lg  leading-normal mb-4 ">
@@ -156,7 +156,7 @@ const ScrollContent = () => {
         id="legal-deadlines"
         className="w-full py-12 border-b border-[#05588E1F]"
       >
-        <h2 className="font-bold text-2xl sm:text-3xl mb-4">
+        <h2 className="font-bold text-2xl lg:text-3xl mb-4">
           Statute of Limitations
         </h2>
         <p className="text-base lg:text-lg text-[#758599] leading-normal mb-4">
@@ -196,7 +196,7 @@ const ScrollContent = () => {
       </div>
       {/* negligence section */}
       <div id="negligence" className="w-full py-12 border-b border-[#05588E1F]">
-        <h2 className="font-bold text-2xl sm:text-3xl mb-4">
+        <h2 className="font-bold text-2xl lg:text-3xl mb-4">
           Comparative Negligence
         </h2>
         <p className="text-base lg:text-lg text-[#758599] leading-normal ">
@@ -211,7 +211,7 @@ const ScrollContent = () => {
         id="2023-updates"
         className="w-full py-12 border-b border-[#05588E1F]"
       >
-        <h2 className="font-bold text-2xl sm:text-3xl mb-4">
+        <h2 className="font-bold text-2xl lg:text-3xl mb-4">
           Recent Changes to NY Auto Accident Laws
         </h2>
         <p className="text-base lg:text-lg text-[#758599] leading-normal ">

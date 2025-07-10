@@ -40,7 +40,7 @@ const ScrollSection = () => {
           <button className="px-4 py-2 font-bold text-xs text-[#3498DB] border-2 border-[#3498DB] rounded-full">
             Coverage & Injury Info
           </button>
-          <h2 className="text-5xl text-center font-bold">
+          <h2 className="text-3xl lg:text-5xl text-center font-bold">
             Auto Accidents in <span>New York</span>
           </h2>
           <p className="text-center text-[#758599]">

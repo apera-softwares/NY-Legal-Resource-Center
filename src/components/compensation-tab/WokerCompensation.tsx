@@ -1,11 +1,11 @@
 "use client";
 import React, { useState, ReactNode } from "react";
-import TypeOfWorkersCompensationBenifit from "./compensation-tab/TypeOfWorkersCompensationBenifit";
-import EligibilityRequirements from "./compensation-tab/EligibilityRequirement";
-import ExtemptOccupations from "./compensation-tab/ExtemptOccupations";
-import DisabilityClassifications from "./compensation-tab/DisabilityClassifications";
-import FilingAClaim from "./compensation-tab/FilingAClaim";
-import UpdateToWorkers from "./compensation-tab/UpdateToWorkers";
+import TypeOfWorkersCompensationBenifit from "./TypeOfWorkersCompensationBenifit";
+import EligibilityRequirements from "./EligibilityRequirement";
+import ExtemptOccupations from "./ExtemptOccupations";
+import DisabilityClassifications from "./DisabilityClassifications";
+import FilingAClaim from "./FilingAClaim";
+import UpdateToWorkers from "./UpdateToWorkers";
 
 interface TabItem {
   id: string;
@@ -57,7 +57,7 @@ const WokerCompensation = () => {
           <button className="px-4 py-2 font-bold text-xs text-[#3498DB] border-2 border-[#3498DB] rounded-full">
             {`WokerCompensation`}
           </button>
-          <h2 className="text-5xl text-center font-bold">
+          <h2 className=" text-3xl lg:text-5xl text-center font-bold">
             {`Workers' Compensation in`} <span>New York</span>
           </h2>
           <p className="text-center text-[#758599]">
