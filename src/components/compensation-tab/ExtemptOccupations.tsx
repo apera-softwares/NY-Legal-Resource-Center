@@ -1,5 +1,5 @@
 import React from "react";
-import { CircleCheck } from "lucide-react";
+import { FaRegCircleCheck } from "react-icons/fa6";
 const ExtemptOccupations = () => {
   return (
     <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
@@ -12,7 +12,7 @@ const ExtemptOccupations = () => {
           <ul className=" space-y-3">
             <li className="flex items-start gap-2.5">
               <span className=" mt-1.5">
-                <CircleCheck size={16} color="#3498DB" />
+                <FaRegCircleCheck className="text-base text-[#3498DB] shrink-0" />
               </span>
               <span className=" text-[#758599]">
                 <strong className="text-black">Medical Benefits : </strong>
@@ -23,7 +23,7 @@ const ExtemptOccupations = () => {
             </li>
             <li className="flex items-start gap-2.5">
               <span className=" mt-1.5">
-                <CircleCheck size={16} color="#3498DB" />
+                <FaRegCircleCheck className="text-base text-[#3498DB] shrink-0" />
               </span>
               <span className=" text-[#758599]">
                 <strong className="text-black">
@@ -36,7 +36,7 @@ const ExtemptOccupations = () => {
             </li>
             <li className="flex items-start gap-2.5">
               <span className=" mt-1.5">
-                <CircleCheck size={16} color="#3498DB" />
+                <FaRegCircleCheck className="text-base text-[#3498DB] shrink-0" />
               </span>
               <span className=" text-[#758599]">
                 <strong className="text-black">
@@ -49,7 +49,7 @@ const ExtemptOccupations = () => {
             </li>
             <li className="flex items-start gap-2.5">
               <span className=" mt-1.5">
-                <CircleCheck size={16} color="#3498DB" />
+                <FaRegCircleCheck className="text-base text-[#3498DB] shrink-0" />
               </span>
               <span className=" text-[#758599]">
                 <strong className="text-black">Death Benefits : </strong>
