@@ -35,7 +35,7 @@ const Navbar = () => {
         <div className="hidden lg:block">
           <Link
             href="#contact"
-            className="bg-[#3498DB] text-white px-7 py-3 rounded-md text-sm font-semibold hover:bg-[#2983c0] transition"
+            className="bg-[#3498DB] text-white text-nowrap px-7 py-3 rounded-md text-sm font-semibold hover:bg-[#2983c0] transition"
           >
             Free Consultation
           </Link>
