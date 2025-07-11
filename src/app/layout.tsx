@@ -18,10 +18,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`bg-white text-black scroll-smooth `}
-      >
-         <Navbar />
+      <body className={`bg-white text-black scroll-smooth `}>
+        <Navbar />
         <main>{children}</main>
         <Footer />
       </body>
