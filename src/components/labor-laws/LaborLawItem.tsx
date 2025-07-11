@@ -14,7 +14,7 @@ const LaborLawItem: React.FC<LaborLawItemProps> = ({ title, content }) => {
         className="flex items-center justify-between gap-4 cursor-pointer"
       >
         <h2
-          className={`text-xl lg:text-2xl  font-bold ${
+          className={`text-lg sm:text-xl lg:text-2xl font-bold ${
             isOpen ? "text-[#3498DB]" : ""
           } transition-all duration-300`}
         >
