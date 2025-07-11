@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import {
     FaFacebookF,
     FaTwitter,
@@ -7,6 +8,7 @@ import {
 } from 'react-icons/fa';
 import { FiPhoneCall, FiMail } from "react-icons/fi";
 import { GrLocation } from "react-icons/gr";
+
 
 
 const Contact = () => {
@@ -72,16 +74,18 @@ const Contact = () => {
             {/* Contact Info */}
             <div className="flex flex-col justify-between md:px-12 px-3">
               <div>
-                <h2 className="text-xl sm:text-2xl font-extrabold mb-8">Our Contact:</h2>
+                <h2 className="text-xl sm:text-2xl font-bold mb-8">
+                  Our Contact:
+                </h2>
 
                 <div className="space-y-6 text-gray-700 text-md">
                   <div className="flex items-start gap-3">
                     <div className="p-3 bg-[#3498DB] text-white rounded-full">
-                      <FiPhoneCall size={26} />
+                      <FiPhoneCall className="text-xl md:text-2xl" />
                     </div>
                     <div>
-                      <p className="text-sm text-[#3498DB]">Phone No:</p>
-                      <p className="font-medium text-black text-lg">
+                      <p className="text-xs text-[#3498DB]">Phone No:</p>
+                      <p className="font-medium text-black text-base sm:text-lg lg:text-xl">
                         (215) 269-7830
                       </p>
                     </div>
@@ -89,11 +93,11 @@ const Contact = () => {
 
                   <div className="flex items-start gap-3">
                     <div className="p-3 bg-[#3498DB] text-white rounded-full">
-                      <FiMail size={26} />
+                      <FiMail className="text-xl md:text-2xl" />
                     </div>
                     <div>
-                      <p className="text-sm text-[#3498DB]">Email:</p>
-                      <p className="font-medium text-black text-lg">
+                      <p className="text-xs text-[#3498DB]">Email:</p>
+                      <p className="font-medium text-black text-base sm:text-lg lg:text-xl">
                         info@hamilton.com
                       </p>
                     </div>
@@ -101,11 +105,11 @@ const Contact = () => {
 
                   <div className="flex items-start gap-3">
                     <div className="p-3 bg-[#3498DB] text-white rounded-full text-lg">
-                      <GrLocation size={26} />
+                      <GrLocation className="text-xl md:text-2xl" />
                     </div>
                     <div>
-                      <p className="text-sm text-[#3498DB]">Address:</p>
-                      <p className="font-medium text-black text-lg">
+                      <p className="text-xs text-[#3498DB]">Address:</p>
+                      <p className="font-medium text-black text-base sm:text-lg lg:text-xl">
                         1107 Branagan Dr, Bristol, PA 19007
                       </p>
                     </div>
@@ -115,12 +119,45 @@ const Contact = () => {
 
               {/* Social Icons */}
               <div className="mt-10">
-                <h2 className="text-xl sm:text-2xl font-extrabold mb-4">Follow On:</h2>
-                <div className="flex gap-4 text-white">
-                  <FaFacebookF className="cursor-pointer hover:text-blue-700 bg-[#3498DB] rounded-full p-2 h-10 w-10" />
-                  <FaTwitter className="cursor-pointer hover:text-blue-700 bg-[#3498DB] rounded-full p-2 h-10 w-10" />
-                  <FaInstagram className="cursor-pointer hover:text-blue-700 bg-[#3498DB] rounded-full p-2 h-10 w-10" />
-                  <FaYoutube className="cursor-pointer hover:text-blue-700 bg-[#3498DB] rounded-full p-2 h-10 w-10" />
+                <h2 className="text-xl sm:text-2xl font-bold mb-4">
+                  Follow On:
+                </h2>
+                <div className="">
+                  <ul className="flex items-center space-x-3">
+                    <li>
+                      <Link
+                        href="#"
+                        className="flex items-center justify-center text-white transition-all duration-200 bg-[#3498DB] rounded-full w-9 h-9"
+                      >
+                        <FaFacebookF className="w-4 h-4 text-white" />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="#"
+                        className="flex items-center justify-center text-white transition-all duration-200 bg-[#3498DB] rounded-full w-9 h-9"
+                      >
+                        <FaTwitter className="w-4 h-4 text-white" />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="#"
+                        className="flex items-center justify-center text-white transition-all duration-200 bg-[#3498DB] rounded-full w-9 h-9 "
+                      >
+                        <FaInstagram className="w-4 h-4 text-white" />
+                      </Link>
+                    </li>
+
+                    <li>
+                      <Link
+                        href="#"
+                        className="flex items-center justify-center text-white transition-all duration-200 bg-[#3498DB] rounded-full w-9 h-9 "
+                      >
+                        <FaYoutube className="w-4 h-4 text-white " />
+                      </Link>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
