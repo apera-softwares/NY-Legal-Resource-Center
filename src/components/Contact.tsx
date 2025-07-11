@@ -13,7 +13,7 @@ const Contact = () => {
     return (
       <section id="contact" className="w-full py-16 bg-white">
         <div className="lg:max-w-5/6 max-w-5xl mx-auto px-4 sm:px-6 lg:px-0">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-10 text-left">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-10 text-center md:text-left">
             Request a Free Consultation
           </h2>
 
@@ -72,7 +72,7 @@ const Contact = () => {
             {/* Contact Info */}
             <div className="flex flex-col justify-between md:px-12 px-3">
               <div>
-                <h2 className="text-2xl font-extrabold mb-8">Our Contact:</h2>
+                <h2 className="text-xl sm:text-2xl font-extrabold mb-8">Our Contact:</h2>
 
                 <div className="space-y-6 text-gray-700 text-md">
                   <div className="flex items-start gap-3">
@@ -115,7 +115,7 @@ const Contact = () => {
 
               {/* Social Icons */}
               <div className="mt-10">
-                <h2 className="text-2xl font-extrabold mb-4">Follow On:</h2>
+                <h2 className="text-xl sm:text-2xl font-extrabold mb-4">Follow On:</h2>
                 <div className="flex gap-4 text-white">
                   <FaFacebookF className="cursor-pointer hover:text-blue-700 bg-[#3498DB] rounded-full p-2 h-10 w-10" />
                   <FaTwitter className="cursor-pointer hover:text-blue-700 bg-[#3498DB] rounded-full p-2 h-10 w-10" />
