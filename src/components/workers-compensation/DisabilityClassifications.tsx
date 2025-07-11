@@ -12,54 +12,54 @@ const DisabilityClassifications = () => {
         </p>
         <div className="w-full">
           <ul className=" space-y-3">
-            <li className="flex items-start gap-2.5">
-              <span className="mt-1.5">
-                <FaRegCircleCheck className="text-base text-[#3498DB] shrink-0" />
-              </span>
-              <span className=" text-[#758599]">
-                <strong className="text-black">Medical Benefits : </strong>
-                100% coverage for necessary medical care related to your work
-                injury with no time limit or cost limit as long as the care is
-                necessary and related to the work injury
-              </span>
+            <li>
+              <div className="flex items-start gap-3">
+                <FaRegCircleCheck className="text-base text-[#3498DB] shrink-0 mt-1" />
+                <span className=" text-[#758599]">
+                  <strong className="text-black">Medical Benefits : </strong>
+                  100% coverage for necessary medical care related to your work
+                  injury with no time limit or cost limit as long as the care is
+                  necessary and related to the work injury
+                </span>
+              </div>
             </li>
-            <li className="flex items-start gap-2.5">
-              <span className=" mt-1.5">
-                <FaRegCircleCheck className="text-base text-[#3498DB] shrink-0" />
-              </span>
-              <span className=" text-[#758599]">
-                <strong className="text-black">
-                  Temporary Disability Benefits :{" "}
-                </strong>
-                Cash benefits for lost time from work, calculated at 2/3 of your
-                average weekly wage (AWW) multiplied by your percentage of
-                disability, up to a maximum weekly amount
-              </span>
+            <li>
+              <div className="flex items-start gap-3">
+                <FaRegCircleCheck className="text-base text-[#3498DB] shrink-0 mt-1" />
+                <span className=" text-[#758599]">
+                  <strong className="text-black">
+                    Temporary Disability Benefits :{" "}
+                  </strong>
+                  Cash benefits for lost time from work, calculated at 2/3 of
+                  your average weekly wage (AWW) multiplied by your percentage
+                  of disability, up to a maximum weekly amount
+                </span>
+              </div>
             </li>
-            <li className="flex items-start gap-2.5">
-              <span className=" mt-1.5">
-                <FaRegCircleCheck className="text-base text-[#3498DB] shrink-0" />
-              </span>
-              <span className=" text-[#758599]">
-                <strong className="text-black">
-                  Permanent Disability Benefits :{" "}
-                </strong>
-                Compensation for permanent impairments, either scheduled loss of
-                use (SLU) for specific body parts or non-scheduled awards for
-                other permanent disabilities
-              </span>
+            <li>
+              <div className="flex items-start gap-3">
+                <FaRegCircleCheck className="text-base text-[#3498DB] shrink-0 mt-1" />
+                <span className=" text-[#758599]">
+                  <strong className="text-black">
+                    Permanent Disability Benefits :{" "}
+                  </strong>
+                  Compensation for permanent impairments, either scheduled loss
+                  of use (SLU) for specific body parts or non-scheduled awards
+                  for other permanent disabilities
+                </span>
+              </div>
             </li>
-            <li className="flex items-start gap-2.5">
-              <span className=" mt-1.5">
-                <FaRegCircleCheck className="text-base text-[#3498DB] shrink-0" />
-              </span>
-              <span className=" text-[#758599]">
-                <strong className="text-black">Death Benefits : </strong>
-                Weekly cash benefits for surviving dependents plus funeral
-                expenses up to $12,500 in New York City, Nassau, Suffolk,
-                Rockland, and Westchester counties, and up to $10,500 in all
-                other counties
-              </span>
+            <li>
+              <div className="flex items-start gap-3">
+                <FaRegCircleCheck className="text-base text-[#3498DB] shrink-0 mt-1" />
+                <span className=" text-[#758599]">
+                  <strong className="text-black">Death Benefits : </strong>
+                  Weekly cash benefits for surviving dependents plus funeral
+                  expenses up to $12,500 in New York City, Nassau, Suffolk,
+                  Rockland, and Westchester counties, and up to $10,500 in all
+                  other counties
+                </span>
+              </div>
             </li>
           </ul>
         </div>

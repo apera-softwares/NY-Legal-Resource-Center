@@ -1,81 +1,8 @@
-import React from 'react';
-import Image from 'next/image';
-import { Link } from 'lucide-react';
+import React from "react";
+//import Image from "next/image";
+import { Link } from "lucide-react";
+import { resources } from "@/data/resources";
 
-const resources = [
-  {
-    imageSrc: '/icons/male-doctor.png',
-    title: 'Auto Accident Resources',
-    description:
-      "Helpful links to navigate New York’s auto accident rules and recovery process.",
-    links: [
-      { text: 'NY DMV: Auto Accidents Information', href: '#' },
-      { text: 'NY No-Fault Insurance FAQs', href: '#' },
-      { text: 'NY Courts: Motor Vehicle Accidents', href: '#' },
-      { text: 'NY Department of Health: Traffic Safety', href: '#' },
-    ],
-  },
-  {
-    imageSrc: '/icons/male-doctor.png',
-    title: "Workers' Compensation Resources",
-    description:
-      "Find official guidance & support if you’ve been injured on the job in New York.",
-    links: [
-      { text: 'NY Workers’ Compensation Board', href: '#' },
-      { text: 'Information for Injured Workers', href: '#' },
-      { text: 'Workers’ Compensation Forms', href: '#' },
-      { text: 'What to Do When Injured on the Job', href: '#' },
-    ],
-  },
-  {
-    imageSrc: '/icons/male-doctor.png',
-    title: 'Labor Law Resources',
-    description:
-      'Understand your workplace rights, safety regulations, & fair wage protections.',
-    links: [
-      { text: 'NY Department of Labor', href: '#' },
-      { text: 'Workplace Safety and Health', href: '#' },
-      { text: 'Wage and Hour Laws', href: '#' },
-      { text: 'NY Division of Human Rights', href: '#' },
-    ],
-  },
-  {
-    imageSrc: '/icons/male-doctor.png',
-    title: 'Medical Resources',
-    description:
-      'Access healthcare support, Medicaid details, & resources for injured workers.',
-    links: [
-      { text: 'NY Office of Professional Medical Conduct', href: '#' },
-      { text: 'NY Health Care Information', href: '#' },
-      { text: 'NY Medicaid Program', href: '#' },
-      { text: 'Find a Workers’ Comp Doctor', href: '#' },
-    ],
-  },
-  {
-    imageSrc: '/icons/male-doctor.png',
-    title: 'Legal Aid Resources',
-    description:
-      'Access legal assistance and referrals for injured workers and low-income individuals.',
-    links: [
-      { text: 'Law Help NY', href: '#' },
-      { text: 'Legal Aid Society of NYC', href: '#' },
-      { text: 'NYC Bar Legal Referral Service', href: '#' },
-      { text: 'NY State Bar Association Referral Service', href: '#' },
-    ],
-  },
-  {
-    imageSrc: '/icons/male-doctor.png',
-    title: 'Forms and Documents',
-    description:
-      'Quick access to key legal & compensation forms for accidents & claims.',
-    links: [
-      { text: 'MV-104: Report of Motor Vehicle Accident', href: '#' },
-      { text: 'C-3: Employee Claim for Compensation', href: '#' },
-      { text: 'LS 223: Complaint of Labor Law Violation', href: '#' },
-      { text: 'NY Courts Forms', href: '#' },
-    ],
-  },
-];
 
 const AdditionalResources = () => {
   return (
@@ -99,25 +26,28 @@ const AdditionalResources = () => {
               key={index}
               className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 lg:p-8 hover:shadow-md transition"
             >
-              <div className="border p-10 rounded-full border-[#05588E29] h-24 w-24 relative mb-4">
-                {/* <div className="relative w-20 h-20 border  rounded-full p-12 my-2"> */}
-                <Image
+              {/* <div className="border p-10 rounded-full border-[#05588E29] h-24 w-24 relative mb-4"> */}
+              {/* <div className="relative w-20 h-20 border  rounded-full p-12 my-2"> */}
+              {/* <Image
                   src={resource.imageSrc}
                   alt={resource.title}
                   fill
                   sizes="40px"
                   className="object-cover"
-                />
+                /> */}
 
-                {/* </div> */}
+              {/* </div> */}
+              {/* </div> */}
+              <div className="flex items-center justify-center border p-8 lg:p-10 rounded-full border-[#05588E29] w-20 h-20 md:h-24 md:w-24 mb-4">
+                {resource.icon}
               </div>
-              <h1 className="text-2xl lg:w-2/3 font-semibold text-black my-4">
+              <h1 className="text-xl sm:text-2xl lg:w-2/3 font-semibold text-black my-4">
                 {resource.title}
               </h1>
-              <p className="text-lg text-gray-600 mb-4">
+              <p className="text-base sm:text-lg text-gray-600 mb-4">
                 {resource.description}
               </p>
-              <h2 className="text-xl font-semibold text-gray-800 my-4">
+              <h2 className="text-base sm:text-lg lg:text-xl font-semibold text-gray-800 my-4">
                 Links:
               </h2>
               <ul className="list-inside text-md text-[#3498DB] space-y-3 font-medium">
