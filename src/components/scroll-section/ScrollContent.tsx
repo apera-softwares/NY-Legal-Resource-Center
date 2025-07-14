@@ -7,7 +7,7 @@ const ScrollContent = () => {
       {/* image section */}
       <div className="w-full">
         <img
-          src="/assets/images/accident.jpg"
+          src="/assets/images/accident.png"
           alt="Accident"
           className="w-full h-[412px] object-cover object-center rounded-2xl"
         />

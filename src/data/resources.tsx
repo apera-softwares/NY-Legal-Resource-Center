@@ -4,9 +4,17 @@ import { VscLaw } from "react-icons/vsc";
 import { FaUserDoctor } from "react-icons/fa6";
 import { RiAuctionFill } from "react-icons/ri";
 import { FaFileAlt } from "react-icons/fa";
+import {
+  CarCrash,
+  Cap,
+  WeighingScale,
+  UserDoctor,
+  Law,
+  Document,
+} from "@/assets/icons";
 export const resources = [
   {
-    imageSrc: "/icons/male-doctor.png",
+    imageSrc: CarCrash,
     icon: (
       <FaCarCrash className="text-4xl md:text-5xl text-[#3498DB] shrink-0" />
     ),
@@ -21,7 +29,7 @@ export const resources = [
     ],
   },
   {
-    imageSrc: "/icons/male-doctor.png",
+    imageSrc:Cap,
     icon: (
       <BiSolidDish className="text-4xl md:text-5xl text-[#3498DB] shrink-0" />
     ),
@@ -36,7 +44,7 @@ export const resources = [
     ],
   },
   {
-    imageSrc: "/icons/male-doctor.png",
+    imageSrc: WeighingScale,
     icon: <VscLaw className="text-4xl md:text-5xl text-[#3498DB] shrink-0" />,
     title: "Labor Law Resources",
     description:
@@ -49,7 +57,7 @@ export const resources = [
     ],
   },
   {
-    imageSrc: "/icons/male-doctor.png",
+    imageSrc: UserDoctor,
     icon: (
       <FaUserDoctor className="text-4xl md:text-5xl text-[#3498DB] shrink-0" />
     ),
@@ -64,7 +72,7 @@ export const resources = [
     ],
   },
   {
-    imageSrc: "/icons/male-doctor.png",
+    imageSrc:Law,
     icon: (
       <RiAuctionFill className="text-4xl md:text-5xl text-[#3498DB] shrink-0" />
     ),
@@ -79,7 +87,7 @@ export const resources = [
     ],
   },
   {
-    imageSrc: "/icons/male-doctor.png",
+    imageSrc: Document,
     icon: (
       <FaFileAlt className="text-4xl md:text-5xl text-[#3498DB] shrink-0" />
     ),

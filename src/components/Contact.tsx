@@ -13,7 +13,7 @@ import { GrLocation } from "react-icons/gr";
 
 const Contact = () => {
     return (
-      <section id="contact" className="w-full py-16 bg-white">
+      <section id="contact" className="w-full pb-24 bg-white">
         <div className="lg:max-w-5/6 max-w-5xl mx-auto px-4 sm:px-6 lg:px-0">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-10 text-center md:text-left">
             Request a Free Consultation
