@@ -64,7 +64,7 @@ const ExtemptOccupations = () => {
       </div>
       <div className="w-full">
         <img
-          src="/assets/images/construction-worker-4.jpg"
+          src="/assets/images/construction-worker-1.png"
           alt=""
           className="w-full lg:w-[512px] h-[512px] border border-[#3498DB] rounded-2xl lg:ml-auto"
         />
