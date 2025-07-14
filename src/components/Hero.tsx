@@ -6,7 +6,7 @@ const Hero = ()=> {
       className="relative min-h-screen flex flex-col justify-center bg-cover bg-center bg-no-repeat py-24 "
       style={{ backgroundImage: "url('/assets/images/hero-section-bg.png')" }}
     >
-      <div className="absolute inset-0 bg-black/80" />
+      <div className="absolute inset-0  bg-slate-950/80 " />
 
       <div className="w-full h-full relative z-10 lg:max-w-5/6 max-w-5xl lg:mx-auto px-4 sm:px-6 lg:px-0  flex flex-col justify-center text-white mt-20  ">
         <span className="inline-block mb-4 px-4 py-2 text-sm bg-transparent border-2 border-[#3498DB] text-[#3498DB] rounded-full w-max font-bold">
