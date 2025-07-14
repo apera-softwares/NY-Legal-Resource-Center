@@ -25,7 +25,7 @@ const ConsultWithAttorney = () => {
   const [showRight, setShowRight] = useState(true);
 
   return (
-    <section id="consultation" className="py-16 bg-white">
+    <section id="consultation" className=" pt-24 pb-16 bg-white">
       <div className="lg:max-w-5/6 max-w-5xl mx-auto px-4 sm:px-6 lg:px-0 text-center">
         <button className="px-4 py-2 font-bold text-xs text-[#3498DB] border-2 border-[#3498DB] rounded-full">
           Get Free Consultation
