@@ -12,10 +12,10 @@ const Navbar = () => {
       <div className="max-w-7xl lg:max-w-5/6 lg:mx-auto px-4 sm:px-6 lg:px-0 py-5  flex justify-between items-center gap-6">
         <div className="">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-[#3498DB] font-bold lg:text-6xl md:text-3xl text-2xl ">
+            <span className="text-primary font-bold lg:text-6xl md:text-3xl text-2xl ">
               NY
             </span>
-            <span className="text-sm sm:text-base font-semibold">
+            <span className="text-sm sm:text-base text-text-base font-semibold">
               New York Legal
               <br className="hidden sm:block" /> Resource Center
             </span>
@@ -27,7 +27,7 @@ const Navbar = () => {
             <Link
               key={link.label}
               href={link.href}
-              className=" text-base  text-[#05162A] hover:text-[#3498DB] transition-all duration-200"
+              className=" text-base  text-text-base hover:text-primary transition-colors duration-200"
             >
               {link.label}
             </Link>
@@ -37,7 +37,7 @@ const Navbar = () => {
         <div className="hidden lg:block">
           <Link
             href="#contact"
-            className="inline-block bg-[#3498DB] text-white text-nowrap px-7 py-3 rounded-md text-sm font-semibold hover:bg-[#2983c0]"
+            className="inline-block bg-primary text-white text-nowrap px-7 py-3 rounded-md text-sm font-semibold hover:bg-[#2983c0]"
           >
             Free Consultation
           </Link>
@@ -63,7 +63,7 @@ const Navbar = () => {
             <Link
               key={link.label}
               href={link.href}
-              className="block py-2 text-[#05162A] font-medium hover:text-[#3498DB] transition-all duration-200"
+              className="block py-2  font-medium text-text-base hover:text-primary transition-all duration-300"
               onClick={() => setMobileOpen(false)}
             >
               {link.label}
@@ -71,7 +71,7 @@ const Navbar = () => {
           ))}
           <Link
             href="#contact"
-            className="mt-2 inline-block w-full text-center bg-[#3498DB] text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-[#2983c0] transition-colors duration-300"
+            className="mt-2 inline-block w-full text-center bg-primary text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-[#2983c0] transition-colors duration-300"
           >
             Free Consultation
           </Link>

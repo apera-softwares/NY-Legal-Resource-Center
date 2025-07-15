@@ -6,3 +6,10 @@ html {
 body {
   font-family: Arial, sans-serif;
 }
+
+@theme {
+  --color-primary:#3498DB;
+  --color-border-primary:#05588E1F;
+  --color-text-base:#05162A;
+  --color-text-muted:#758599;
+}
