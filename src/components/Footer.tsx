@@ -170,7 +170,7 @@ const Footer = () => {
 
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center px-6 py-3 mt-3 text-xs font-bold  text-white transition-all duration-300  bg-[#2F6FC6] rounded-lg cursor-pointer "
+                  className="inline-flex items-center justify-center px-6 py-3 mt-3 text-xs font-bold  text-white transition-all duration-300  bg-primary rounded-lg cursor-pointer "
                 >
                   Subscribe
                 </button>
