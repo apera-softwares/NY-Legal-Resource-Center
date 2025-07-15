@@ -7,15 +7,15 @@ interface SidebarProps {
 
 const ScrollSidebar = ({ sections, activeId }: SidebarProps) => {
   return (
-    <div className="hidden lg:block sticky top-20 col-span-3 w-full h-fit self-start p-5 rounded-2xl border border-[#05588E29]">
+    <div className="hidden lg:block sticky top-20 col-span-3 w-full h-fit self-start p-5 rounded-2xl border border-border-primary">
       <ul>
         {sections.map((section) => (
           <li
             key={section.id}
-            className={`px-4 py-3.5 text-base lg:text-lg border-b border-[#05588E1F] ${
+            className={`px-4 py-3.5 text-base lg:text-lg border-b border-border-primary ${
               activeId === section.id
-                ? "text-[#3498DB] border-l-4 border-[#3498DB]"
-                : "text-[#758599]"
+                ? "text-primary border-l-4 border-l-primary"
+                : "text-text-muted"
             } transition-all duration-300`}
           >
             <a href={`#${section.id}`} className="block w-full">

@@ -9,13 +9,13 @@ const Hero = ()=> {
       <div className="absolute inset-0  bg-slate-950/80 " />
 
       <div className="w-full h-full relative z-10 lg:max-w-5/6 max-w-5xl lg:mx-auto px-4 sm:px-6 lg:px-0  flex flex-col justify-center text-white mt-20  ">
-        <span className="inline-block mb-4 px-4 py-2 text-sm bg-transparent border-2 border-[#3498DB] text-[#3498DB] rounded-full w-max font-bold">
+        <span className="inline-block mb-4 px-4 py-2 text-sm bg-transparent border-2 border-primary text-primary rounded-full w-max font-bold">
           Legal Insights
         </span>
 
         <h1 className="flex flex-col text-4xl sm:text-5xl lg:text-7xl   font-bold ">
           <span>
-            <span className="text-[#3498DB]">New York </span>
+            <span className="text-primary">New York </span>
             Legal Resource
           </span>
           <span>Center</span>
@@ -36,7 +36,7 @@ const Hero = ()=> {
         </p>
 
         <div className="mt-12 flex flex-wrap gap-4">
-          <button className="bg-[#3498DB] text-white px-6 py-3 rounded-md font-bold hover:bg-[#2983c0] transition-colors duration-300 cursor-pointer">
+          <button className="bg-primary text-white px-6 py-3 rounded-md font-bold hover:bg-[#2983c0] transition-colors duration-300 cursor-pointer">
             Get Free Consultation
           </button>
           <button className="border border-white text-white px-6 py-3 rounded-md font-bold hover:bg-white hover:text-black transition-colors duration-300 cursor-pointer">

@@ -55,27 +55,27 @@ const WokersCompensation = () => {
       <div className="w-full lg:max-w-5/6  mx-auto">
         <div className="w-full px-4 sm:px-6 lg:px-0  py-24 ">
           <div className="w-full flex flex-col items-center gap-4 mb-14">
-            <button className="px-4 py-2 font-bold text-xs text-[#3498DB] border-2 border-[#3498DB] rounded-full">
+            <button className="px-4 py-2 font-bold text-xs text-primary border-2 border-primary rounded-full">
               {`Workers' Compensation`}
             </button>
             <h2 className=" text-3xl lg:text-5xl text-center font-bold">
               {`Workers' Compensation in`}{" "}
-              <span className="text-[#3498DB]">New York</span>
+              <span className="text-primary">New York</span>
             </h2>
-            <p className="text-center text-[#758599]">
+            <p className="text-center text-text-muted">
               {`Understanding Your Rights and Benefits After a Workplace Injury`}
             </p>
           </div>
-          <div className="w-full flex flex-col lg:flex-row   lg:flex-nowrap border border-[#05588E29] rounded-xl overflow-hidden mb-20">
+          <div className="w-full flex flex-col lg:flex-row   lg:flex-nowrap border border-border-primary rounded-xl overflow-hidden mb-20">
             {tabs.map((tabItem) => (
               <button
                 key={tabItem.id}
                 onClick={() => setActiveTabId(tabItem.id)}
                 className={`text-base lg:text-lg font-medium px-7 py-5 ${
                   activeTabId === tabItem.id
-                    ? "text-white bg-[#3498DB]"
-                    : "text-[#758599]"
-                }  border border-[#05588E29] cursor-pointer`}
+                    ? "text-white bg-primary"
+                    : " text-text-muted "
+                }  border border-border-primary cursor-pointer`}
               >
                 {`${tabItem.label}`}
               </button>
