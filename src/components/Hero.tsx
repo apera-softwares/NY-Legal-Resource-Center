@@ -1,6 +1,14 @@
-import React from 'react'
+"use client";
+import React from "react";
 
-const Hero = ()=> {
+const Hero = () => {
+  const handleScrollToConsultForm = () => {
+    const consultForm = document.getElementById("contact");
+    if (consultForm) {
+      consultForm.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section
       className="relative min-h-screen flex flex-col justify-center bg-cover bg-center bg-no-repeat py-24 "
@@ -36,16 +44,24 @@ const Hero = ()=> {
         </p>
 
         <div className="mt-12 flex flex-wrap gap-4">
-          <button className="bg-primary text-white px-6 py-3 rounded-md font-bold hover:bg-[#2983c0] transition-colors duration-300 cursor-pointer">
+          <button
+            onClick={handleScrollToConsultForm}
+            className="bg-primary text-white px-6 py-3 rounded-md font-bold hover:bg-[#2983c0] transition-colors duration-300 cursor-pointer"
+          >
             Get Free Consultation
           </button>
           <button className="border border-white text-white px-6 py-3 rounded-md font-bold hover:bg-white hover:text-black transition-colors duration-300 cursor-pointer">
             Watch Attorney Video
           </button>
+          <button
+            className="bg-primary text-white px-6 py-3 rounded-md font-bold hover:bg-[#2983c0] transition-colors duration-300 cursor-pointer"
+          >
+            Get Your Free Police Report
+          </button>
         </div>
       </div>
     </section>
   );
-}
+};
 
-export default Hero
+export default Hero;
