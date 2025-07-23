@@ -58,7 +58,7 @@ const Footer = () => {
   };
 
   return (
-    <section className="w-full bg-[#05162A] rounded-t-2xl lg:rounded-t-3xl mt-10">
+    <section className="w-full bg-[#05162A] rounded-t-2xl lg:rounded-t-3xl">
       <Toaster />
       <div className="w-full lg:max-w-5/6 mx-auto">
         <div className="w-full px-4 sm:px-6 lg:px-0">

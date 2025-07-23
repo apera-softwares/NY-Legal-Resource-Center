@@ -8,8 +8,9 @@ body {
 }
 
 @theme {
-  --color-primary:#3498DB;
-  --color-border-primary:#05588E1F;
-  --color-text-base:#05162A;
-  --color-text-muted:#758599;
+  --color-primary: #3498db;
+  --color-primary-hover: #2c80b4;
+  --color-border-primary: #05588e1f;
+  --color-text-base: #05162a;
+  --color-text-muted: #758599;
 }
