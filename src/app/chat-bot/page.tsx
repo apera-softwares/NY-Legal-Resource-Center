@@ -14,6 +14,7 @@ const ChatBot = () => {
   const [user, setUser] = useState({ name: "", email: "" });
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
+const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (isUserAuthenticated) {
@@ -37,32 +38,46 @@ const ChatBot = () => {
     }
   };
 
-  const handleSend = async () => {
-    if (!input.trim()) return;
+ const handleSend = async () => {
+  if (!input.trim()) return;
 
-    const newUserMessage: Message = {
-      message: input,
-      generatedBy: "user",
-      createdAt: new Date().toISOString(),
-    };
-    setMessages((prev) => [...prev, newUserMessage]);
-    setInput("");
+  const newUserMessage: Message = {
+    message: input,
+    generatedBy: "user",
+    createdAt: new Date().toISOString(),
+  };
+  setMessages((prev) => [...prev, newUserMessage]);
+  setInput("");
+  setLoading(true);
 
-    try {
-      const response = await axios.post("https://4b6afee38326.ngrok-free.app/chat", {
+  try {
+    const response = await axios.post(
+      "https://ee91f58dfa33.ngrok-free.app/chat",
+      {
         email: user.email,
         firstname: user.name,
         message: input,
-      });
+      },
+      {
+        headers: {
+          "ngrok-skip-browser-warning": "true",
+        },
+      }
+    );
 
-      const newMessages = response.data.messages;
-      const systemResponses = newMessages.filter((msg: Message) => msg.generatedBy === "system");
+    const newMessages = response.data.messages;
+    const systemResponses = newMessages.filter(
+      (msg: Message) => msg.generatedBy === "system"
+    );
 
-      setMessages((prev) => [...prev, ...systemResponses]);
-    } catch (error) {
-      console.error("Error sending message:", error);
-    }
-  };
+    setMessages((prev) => [...prev, ...systemResponses]);
+  } catch (error) {
+    console.error("Error sending message:", error);
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   if (!isUserAuthenticated) {
     return (
@@ -111,57 +126,63 @@ const ChatBot = () => {
     );
   }
 
- return (
-  <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 via-white to-purple-100 px-4 py-10">
-    <div className="w-full max-w-2xl flex flex-col bg-white shadow-2xl rounded-2xl p-6 border border-gray-200">
-      <h1 className="text-2xl font-bold text-blue-700 text-center mb-6">Chat Assistant</h1>
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 via-white to-purple-100 px-4 py-10">
+      <div className="w-full max-w-2xl flex flex-col bg-white shadow-2xl rounded-2xl p-6 border border-gray-200">
+        <h1 className="text-2xl font-bold text-blue-700 text-center mb-6">Chat Assistant</h1>
 
-      <div className="flex-1 overflow-y-auto max-h-[400px] mb-4 space-y-3">
-        {messages.length === 0 ? (
-          <div className="flex flex-col items-center justify-center text-center text-gray-500 mt-20">
-            <div className="text-6xl mb-4">🤖</div>
-            <p className="text-lg font-medium">Hello {user.name}, how can I assist you today?</p>
-            <p className="text-sm text-gray-400 mt-2">Ask me anything related to legal help!</p>
-          </div>
-        ) : (
-          messages.map((msg, index) => (
-            <div
-              key={index}
-              className={`flex ${msg.generatedBy === "user" ? "justify-end" : "justify-start"}`}
-            >
-              <div
-                className={`max-w-xs px-4 py-3 rounded-2xl text-sm shadow-md ${
-                  msg.generatedBy === "user"
-                    ? "bg-blue-600 text-white rounded-br-none"
-                    : "bg-gray-100 text-gray-800 rounded-bl-none"
-                }`}
-              >
-                {msg.message}
-              </div>
+        <div className="flex-1 overflow-y-auto max-h-[400px] mb-4 space-y-3">
+          {messages.length === 0 ? (
+            <div className="flex flex-col items-center justify-center text-center text-gray-500 mt-20">
+              <div className="text-6xl mb-4">🤖</div>
+              <p className="text-lg font-medium">Hello {user.name}, how can I assist you today?</p>
+              <p className="text-sm text-gray-400 mt-2">Ask me anything related to legal help!</p>
             </div>
-          ))
-        )}
+          ) : (
+            messages.map((msg, index) => (
+              <div
+                key={index}
+                className={`flex ${msg.generatedBy === "user" ? "justify-end" : "justify-start"}`}
+              >
+                <div
+                  className={`max-w-xs px-4 py-3 rounded-2xl text-sm shadow-md ${msg.generatedBy === "user"
+                      ? "bg-blue-600 text-white rounded-br-none"
+                      : "bg-gray-100 text-gray-800 rounded-bl-none"
+                    }`}
+                >
+                  {msg.message}
+                </div>
+              </div>
+            ))
+          )}
+           {loading && (
+      <div className="flex justify-start">
+        <div className="max-w-xs px-4 py-3 rounded-2xl text-sm shadow-md bg-gray-100 text-gray-800 rounded-bl-none">
+          Typing...
+        </div>
       </div>
+    )}
+        </div>
 
-      <div className="flex items-center gap-2 mt-auto">
-        <input
-          type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Type your message..."
-          className="flex-1 px-4 py-3 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-200"
-          onKeyDown={(e) => e.key === "Enter" && handleSend()}
-        />
-        <button
-          onClick={handleSend}
-          className="bg-blue-600 hover:bg-blue-700 transition p-3 rounded-full text-white shadow-md"
-        >
-          <FiSend size={20} />
-        </button>
+        <div className="flex items-center gap-2 mt-auto">
+          <input
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="Type your message..."
+            className="flex-1 px-4 py-3 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-200"
+            onKeyDown={(e) => e.key === "Enter" && handleSend()}
+          />
+          <button
+            onClick={handleSend}
+            className="bg-blue-600 hover:bg-blue-700 transition p-3 rounded-full text-white shadow-md"
+          >
+            <FiSend size={20} />
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
 
 };
 
