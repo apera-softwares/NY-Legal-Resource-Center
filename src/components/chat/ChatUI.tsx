@@ -25,8 +25,8 @@ const ChatUI: React.FC<ChatUIProps> = ({
   onSend,
   onLogout,
 }) => (
-  <div className="w-full max-w-2xl">
-    <div className=" relative  w-full flex flex-col bg-white shadow-2xl rounded-2xl px-6 pt-14 pb-10 border  border-gray-200">
+  <div className="w-full max-w-2xl mt-10">
+    <div className=" relative  w-full flex flex-col bg-white shadow-2xl rounded-2xl px-6 pt-14 pb-6 border  border-gray-200">
       <button
         onClick={onLogout}
         className=" top-4 right-6 absolute font-medium bg-primary hover:bg-primary-hover text-white px-4 py-2 rounded-lg  tracking-wide transition-colors duration-300 cursor-pointer"
@@ -37,7 +37,7 @@ const ChatUI: React.FC<ChatUIProps> = ({
         Chat Assistant
       </h1>
 
-      <div className="flex-1 overflow-y-auto max-h-72 mb-4 space-y-3">
+      <div className="flex-1 overflow-y-auto max-h-64 mb-4 space-y-3">
         {messages.length === 0 ? (
           <div className="flex flex-col items-center justify-center text-center text-gray-500 mt-20">
             <div className="text-6xl mb-4">🤖</div>
@@ -83,12 +83,12 @@ const ChatUI: React.FC<ChatUIProps> = ({
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Type your message..."
-          className="flex-1 px-4 py-3 border focus:border-primary rounded-full focus:outline-none focus:ring-2 focus:ring-primary transition duration-200"
+          className="h-12 flex-1 px-4 py-3 border focus:border-primary rounded-full focus:outline-none focus:ring-2 focus:ring-primary transition duration-200"
           onKeyDown={(e) => e.key === "Enter" && onSend()}
         />
         <button
           onClick={onSend}
-          className="bg-primary hover:bg-primary-hover  transition-colors duration-300 p-3 rounded-full text-white shadow-md cursor-pointer"
+          className=" h-12 w-12 flex items-center justify-center bg-primary hover:bg-primary-hover  transition-colors duration-300 rounded-full text-white shadow-md cursor-pointer"
         >
           <FiSend size={20} />
         </button>
