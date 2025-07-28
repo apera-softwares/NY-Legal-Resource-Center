@@ -6,7 +6,7 @@ import {
   getFromLocalStorage,
   removeFromLocalStorage,
 } from "@/utils/localStorageUtils";
-import { CHAT_BOT_API } from "@/constants/api";
+import { BACKEND_API_BASE_URL } from "@/config/api";
 import LoginForm from "@/components/auth/LoginForm";
 import ChatUI from "@/components/chat/ChatUI";
 
@@ -75,7 +75,7 @@ const ChatBot = () => {
 
     try {
       const response = await axios.post(
-        `${CHAT_BOT_API}`,
+        `${BACKEND_API_BASE_URL}chat`,
         {
           email: user.email,
           firstname: user.name,
