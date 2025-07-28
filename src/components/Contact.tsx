@@ -7,6 +7,7 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 import { FiPhoneCall, FiMail } from "react-icons/fi";
 import { GrLocation } from "react-icons/gr";
 import Loader from "./common/Loader";
+import { BACKEND_API_BASE_URL } from "@/config/api";
 
 interface FormData {
   firstName: string;
@@ -55,7 +56,7 @@ const Contact = () => {
     setLoading(true);
 
     try {
-      await axios.post("/api", formData);
+      await axios.post(`${BACKEND_API_BASE_URL}`, formData);
       toast.success("Form submitted successfully!");
       clearData();
     } catch (err) {

@@ -8,6 +8,7 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import Loader from "./common/Loader";
+import { BACKEND_API_BASE_URL } from "@/config/api";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -20,7 +21,7 @@ const Footer = () => {
     if (!validateEmail()) return;
     setLoading(true);
     try {
-      await axios.post("/api", { email });
+      await axios.post(`${BACKEND_API_BASE_URL}`, { email });
       toast.success("subscribed successfully!");
       setEmail("");
       setError("");
