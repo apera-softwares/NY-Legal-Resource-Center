@@ -18,10 +18,11 @@ interface Message {
 
 const USER_NAME_KEY = "authUserName";
 const USER_EMAIL_KEY = "authUserEmail";
+const USER_PHONE_KEY = "authUserPhone";
 
 const ChatBot = () => {
   const [isUserAuthenticated, setIsUserAuthenticated] = useState(false);
-  const [user, setUser] = useState({ name: "", email: "" });
+  const [user, setUser] = useState({ name: "", email: "", phone: "" });
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
   const [loading, setLoading] = useState(false);
@@ -29,9 +30,10 @@ const ChatBot = () => {
   useEffect(() => {
     const name = getFromLocalStorage(USER_NAME_KEY);
     const email = getFromLocalStorage(USER_EMAIL_KEY);
+    const phone = getFromLocalStorage(USER_PHONE_KEY);
 
-    if (name && email) {
-      setUser({ name, email });
+    if (name && email && phone) {
+      setUser({ name, email, phone });
       setIsUserAuthenticated(true);
     }
   }, []);
@@ -45,7 +47,7 @@ const ChatBot = () => {
       };
       setMessages([welcomeMessage]);
     }
-  }, [isUserAuthenticated,user.name]);
+  }, [isUserAuthenticated, user.name]);
 
   const handleUserInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -107,6 +109,7 @@ const ChatBot = () => {
     setUser({
       name: "",
       email: "",
+      phone: "",
     });
     setIsUserAuthenticated(false);
   };
