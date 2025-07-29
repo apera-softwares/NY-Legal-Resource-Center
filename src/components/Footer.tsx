@@ -1,70 +1,21 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import { FiPhoneCall } from "react-icons/fi";
 import { FiMail } from "react-icons/fi";
 import { GrLocation } from "react-icons/gr";
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
-import axios from "axios";
-import toast, { Toaster } from "react-hot-toast";
-import Loader from "./common/Loader";
-import { BACKEND_API_BASE_URL } from "@/config/api";
+
+
 
 const Footer = () => {
-  const [email, setEmail] = useState("");
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
-
-  const handleSubscribe = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    if (!validateEmail()) return;
-    setLoading(true);
-    try {
-      await axios.post(`${BACKEND_API_BASE_URL}`, { email });
-      toast.success("subscribed successfully!");
-      setEmail("");
-      setError("");
-    } catch (err) {
-      if (axios.isAxiosError(err)) {
-        const message =
-          err.response?.data?.message ||
-          "Failed to subscribe, Please try again";
-        toast.error(message);
-      } else {
-        toast.error("Failed to subscribe, Please try again.");
-      }
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const validateEmail = () => {
-    let isValidEmail = true;
-    let tempError = "";
-
-    // email
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (email.trim() === "") {
-      tempError = "Email is required";
-      isValidEmail = false;
-    } else if (!emailRegex?.test(email)) {
-      tempError = "Please enter a valid email";
-      isValidEmail = false;
-    } else {
-      tempError = "";
-    }
-    setError(tempError);
-    return isValidEmail;
-  };
 
   return (
     <section className="w-full bg-[#05162A] rounded-t-2xl lg:rounded-t-3xl">
-      <Toaster />
       <div className="w-full lg:max-w-5/6 mx-auto">
         <div className="w-full px-4 sm:px-6 lg:px-0">
-          <div className="grid grid-cols-2 md:col-span-3 lg:grid-cols-6 gap-y-16 gap-x-12  py-14">
-            <div className="col-span-2 md:col-span-3 lg:col-span-2 lg:pr-6">
+          <div className="w-full grid grid-cols-4  lg:grid-cols-7 gap-y-16 gap-x-12  py-14">
+            <div className="w-full col-span-4 lg:col-span-3  lg:pr-6">
               <div className="w-full mb-4">
                 <Link
                   href="/"
@@ -121,7 +72,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="col-span-2 sm:col-span-1">
+            <div className="w-full col-span-4 sm:col-span-2  lg:col-span-2">
               <p className="text-lg lg:text-xl font-bold text-white mb-6">
                 Quick Links
               </p>
@@ -173,7 +124,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="col-span-2 sm:col-span-1">
+            <div className="w-full col-span-4 sm:col-span-2  lg:col-span-2">
               <p className="text-lg lg:text-xl font-bold text-white mb-6">
                 About
               </p>
@@ -200,44 +151,6 @@ const Footer = () => {
                   </span>
                 </li>
               </ul>
-            </div>
-
-            <div className="col-span-2 md:col-span-1 lg:col-span-2 lg:pl-8">
-              <p className="text-lg lg:text-xl font-bold text-white mb-6">
-                Newsletter
-              </p>
-
-              <form onSubmit={handleSubscribe} className="">
-                <p className="text-xs text-white mb-3">
-                  Subscribe to our newsletter for latest updates.
-                </p>
-
-                <div className="">
-                  <div className="relative">
-                    <FiMail className="absolute  top-1/2 left-3 w-5 h-4 mt-[1px] text-primary -translate-y-1/2 " />
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Your email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className=" w-full max-w-72 pl-9 p-3 text-text-base placeholder:text-text-muted transition-all duration-300 bg-white border border-[#C0C0C0] rounded-md focus:outline-none focus:border-primary"
-                    />
-                  </div>
-                  <span className="text-xs text-red-500">{error || ""}</span>
-                </div>
-
-                <button
-                  disabled={loading}
-                  className="w-24 inline-flex items-center justify-center px-6 py-3 mt-3 text-xs font-bold  text-white transition-all duration-300  bg-primary rounded-lg cursor-pointer disabled:cursor-not-allowed "
-                >
-                  {loading ? (
-                    <Loader className="text-xl text-white" />
-                  ) : (
-                    "Subscribe"
-                  )}
-                </button>
-              </form>
             </div>
           </div>
           <div className="py-4 border-t border-border-primary">
