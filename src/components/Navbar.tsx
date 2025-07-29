@@ -7,6 +7,11 @@ import { navLinks } from "@/data/navLinks";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const handleCalendlyClick = () => {
+    window.open("https://calendly.com/smartinstallersnyc", "_blank");
+  };
+
   return (
     <nav className="w-full fixed top-0 left-0 bg-white shadow-md z-50">
       <div className="max-w-7xl lg:max-w-5/6 lg:mx-auto px-4 sm:px-6 lg:px-0 py-5  flex justify-between items-center gap-6">
@@ -35,12 +40,12 @@ const Navbar = () => {
         </div>
 
         <div className="hidden lg:block">
-          <Link
-            href="#contact"
-            className="inline-block bg-primary text-white text-nowrap px-7 py-3 rounded-md text-sm font-semibold hover:bg-[#2983c0]"
+          <button
+            onClick={handleCalendlyClick}
+            className="inline-block bg-primary text-white text-nowrap px-7 py-3 rounded-md text-sm font-semibold hover:bg-[#2983c0] cursor-pointer"
           >
             Free Consultation
-          </Link>
+          </button>
         </div>
 
         <div className="lg:hidden">
@@ -69,12 +74,12 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
-          <Link
-            href="#contact"
-            className="mt-2 inline-block w-full text-center bg-primary text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-[#2983c0] transition-colors duration-300"
+          <button
+            onClick={handleCalendlyClick}
+            className="mt-2 inline-block w-full text-center bg-primary text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-[#2983c0] transition-colors duration-300 cursor-pointer"
           >
             Free Consultation
-          </Link>
+          </button>
         </div>
       )}
     </nav>
