@@ -1,32 +1,36 @@
-"use client"
-import React, { useState } from 'react';
-import {  FaChevronDown } from 'react-icons/fa';
+"use client";
+import React, { useState } from "react";
+import { FaChevronDown } from "react-icons/fa";
 import { FaRegCircleCheck } from "react-icons/fa6";
 
 const pointsLeft = [
-  'Evaluate the specific details of your case',
-  'Explain your rights and options under New York law',
-  'Handle paperwork and meet critical deadlines',
-  'Negotiate with insurance companies and opposing parties',
-  'Represent you in hearings, trials, or appeals if necessary',
-  'Maximize your potential compensation',
+  "Evaluate the specific details of your case",
+  "Explain your rights and options under New York law",
+  "Handle paperwork and meet critical deadlines",
+  "Negotiate with insurance companies and opposing parties",
+  "Represent you in hearings, trials, or appeals if necessary",
+  "Maximize your potential compensation",
 ];
 
 const pointsRight = [
-  'An auto accident resulting in significant injury or property damage',
-  'A workplace injury or occupational illness',
-  'Experiencing workplace discrimination, harassment, or retaliation',
+  "An auto accident resulting in significant injury or property damage",
+  "A workplace injury or occupational illness",
+  "Experiencing workplace discrimination, harassment, or retaliation",
   "Being denied workers' compensation benefits",
-  'Wage and hour violations or other labor law issues',
+  "Wage and hour violations or other labor law issues",
 ];
 
 const ConsultWithAttorney = () => {
   const [showLeft, setShowLeft] = useState(true);
   const [showRight, setShowRight] = useState(true);
 
+  const handleCalendlyClick = () => {
+    window.open("https://calendly.com/smartinstallersnyc", "_blank");
+  };
+
   return (
-    <section id="consultation" className=" pt-24 pb-16 bg-white">
-      <div className="lg:max-w-5/6 max-w-5xl mx-auto px-4 sm:px-6 lg:px-0 ">
+    <section id="consultation" className="w-full pt-24 pb-16 bg-white">
+      <div className="w-full lg:max-w-5/6  mx-auto px-4 sm:px-6 lg:px-0 ">
         <div className="flex flex-col items-center  mb-14 ">
           <button className="px-4 py-2 font-bold text-xs text-center text-primary border-2 border-primary  rounded-full">
             Get Free Consultation
@@ -115,6 +119,16 @@ const ConsultWithAttorney = () => {
               </div>
             )}
           </div>
+        </div>
+
+        {/* CALENDLY BUTTON */}
+        <div className="flex justify-center mt-12">
+          <button
+            onClick={handleCalendlyClick}
+            className="bg-primary text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-[#2983c0] transition-colors duration-300 cursor-pointer"
+          >
+            Schedule Your Free Consultation
+          </button>
         </div>
       </div>
     </section>
