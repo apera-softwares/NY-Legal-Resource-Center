@@ -46,7 +46,6 @@ jobs:
             sudo docker rm new-york-legal-landing || true
             sudo docker image rm aperrasolutions/new-york-legal-landing:latest || true
             sudo docker run --name new-york-legal-landing -d -p 3045:3000 \
-              -e PORT=${{ secrets.PORT }} \
               -e OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }} \
               -e JWT_SECRET=${{ secrets.JWT_SECRET }} \
               -e SMTP_EMAIL=${{ secrets.SMTP_EMAIL }} \
