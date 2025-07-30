@@ -99,6 +99,8 @@ const ChatBot = () => {
     if (!trimmedName || !trimmedEmail || !trimmedPhone) return;
 
     try {
+      console.log("BACKEND_API_BASE_URL ", BACKEND_API_BASE_URL)
+
       const response = await axios.post(`${BACKEND_API_BASE_URL}start_session`, {
         name: trimmedName,
         email: trimmedEmail,
