@@ -178,11 +178,11 @@ const generatePDFSummary = (session) => {
         doc.rect(50, yPosition, 495, 80).stroke(lightGray).fill(lightGray);
         doc.fillColor('black');
         doc.fontSize(12).font('Helvetica-Bold').text('Name:', 70, yPosition + 15);
-        doc.fontSize(12).font('Helvetica').text(session.name, 120, yPosition + 15);
+        doc.fontSize(12).font('Helvetica').text(session.user.name, 120, yPosition + 15);
         doc.fontSize(12).font('Helvetica-Bold').text('Email:', 70, yPosition + 35);
-        doc.fontSize(12).font('Helvetica').text(session.email, 120, yPosition + 35);
+        doc.fontSize(12).font('Helvetica').text(session.user.email, 120, yPosition + 35);
         doc.fontSize(12).font('Helvetica-Bold').text('Phone:', 70, yPosition + 55);
-        doc.fontSize(12).font('Helvetica').text(session.phone, 120, yPosition + 55);
+        doc.fontSize(12).font('Helvetica').text(session.user.phone, 120, yPosition + 55);
 
         doc.fontSize(12).font('Helvetica-Bold').text('Date:', 300, yPosition + 15);
         doc.fontSize(12).font('Helvetica').text(new Date().toLocaleDateString(), 350, yPosition + 15);
@@ -343,10 +343,12 @@ const generatePDFSummary = (session) => {
         yPosition += 30;
 
         if (allText.includes('accident') || allText.includes('injury') || allText.includes('hurt')) {
+            // Economic Damages
             doc.fillColor(accentColor);
             doc.fontSize(12).font('Helvetica-Bold').text('Economic Damages:', 70, yPosition);
             doc.fillColor('black');
             yPosition += 15;
+
             doc.fontSize(10).font('Helvetica').text('• Medical expenses (past and future)', 90, yPosition);
             yPosition += 12;
             doc.text('• Lost wages and earning capacity', 90, yPosition);
@@ -356,10 +358,18 @@ const generatePDFSummary = (session) => {
             doc.text('• Rehabilitation and therapy costs', 90, yPosition);
             yPosition += 20;
 
+            // ✅ Check page space BEFORE Non-Economic Damages
+            if (yPosition > 700) {
+                doc.addPage();
+                yPosition = 50;
+            }
+
+            // Non-Economic Damages
             doc.fillColor(accentColor);
             doc.fontSize(12).font('Helvetica-Bold').text('Non-Economic Damages:', 70, yPosition);
             doc.fillColor('black');
             yPosition += 15;
+
             doc.fontSize(10).font('Helvetica').text('• Pain and suffering', 90, yPosition);
             yPosition += 12;
             doc.text('• Emotional distress', 90, yPosition);
