@@ -5,15 +5,12 @@ import { useRouter } from "next/navigation";
 const Hero = () => {
   const router = useRouter();
 
-  const handleScrollToConsultForm = () => {
-    const consultForm = document.getElementById("contact");
-    if (consultForm) {
-      consultForm.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   const handleNavigateToChatBot = () => {
     router.push("/chat-bot");
+  };
+
+  const handleCalendlyClick = () => {
+    window.open("https://calendly.com/smartinstallersnyc", "_blank");
   };
 
   return (
@@ -51,7 +48,7 @@ const Hero = () => {
 
         <div className="mt-12 flex flex-wrap gap-4">
           <button
-            onClick={handleScrollToConsultForm}
+            onClick={handleCalendlyClick}
             className="bg-primary text-white px-6 py-3 rounded-md font-bold hover:bg-[#2983c0] transition-colors duration-300 cursor-pointer"
           >
             Get Free Consultation

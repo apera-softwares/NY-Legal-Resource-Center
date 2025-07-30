@@ -17,19 +17,18 @@ interface Message {
 }
 
 const ChatBot = () => {
+  const USER_NAME_KEY = "authUserName";
+  const USER_EMAIL_KEY = "authUserEmail";
+  const USER_PHONE_KEY = "authUserPhone";
+  const SESSION_ID_KEY = "chatSessionId";
   const [isUserAuthenticated, setIsUserAuthenticated] = useState(false);
-  const [user, setUser] = useState({ name: "", email: "", phone: "" });
   const [sessionId, setSessionId] = useState<string | null>(null);
+  const [user, setUser] = useState({ name: "", email: "", phone: "" });
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
   const [loading, setLoading] = useState(false);
   const [agentJoining, setAgentJoining] = useState(false);
   const [currentAgent, setCurrentAgent] = useState("");
-
-  const USER_NAME_KEY = "authUserName";
-  const USER_EMAIL_KEY = "authUserEmail";
-  const USER_PHONE_KEY = "authUserPhone";
-  const SESSION_ID_KEY = "chatSessionId";
 
   // Agent names for variety
   const agentNames = [
@@ -37,7 +36,7 @@ const ChatBot = () => {
     "Robert Chen",
     "Amanda Rodriguez",
     "Michael Thompson",
-    "Sarah Williams"
+    "Sarah Williams",
   ];
 
   // Try to auto-login from localStorage
@@ -59,7 +58,8 @@ const ChatBot = () => {
   };
 
   const simulateAgentJoining = async () => {
-    const randomAgent = agentNames[Math.floor(Math.random() * agentNames.length)];
+    const randomAgent =
+      agentNames[Math.floor(Math.random() * agentNames.length)];
     const randomWaitTime = Math.floor(Math.random() * 5000) + 2000; // 2-7 seconds
 
     // Step 1: Show "finding agent" status
@@ -67,11 +67,11 @@ const ChatBot = () => {
     setAgentJoining(true);
 
     // Wait for random time
-    await new Promise(resolve => setTimeout(resolve, randomWaitTime));
+    await new Promise((resolve) => setTimeout(resolve, randomWaitTime));
 
     // Step 2: Show agent joined status (brief moment)
     setCurrentAgent(randomAgent);
-    await new Promise(resolve => setTimeout(resolve, 1000)); // Show for 1 second
+    await new Promise((resolve) => setTimeout(resolve, 1000)); // Show for 1 second
 
     // Step 3: Add agent joined message as regular chat message
     const agentJoinedMessage: Message = {
@@ -83,7 +83,7 @@ const ChatBot = () => {
 
     // Step 4: Add greeting message
     const greetingMessage: Message = {
-      message: `Hi ${user.name.split(' ')[0]}, how can I help you today?`,
+      message: `Hi ${user.name.split(" ")[0]}, how can I help you today?`,
       generatedBy: "system",
       createdAt: new Date().toISOString(),
     };
@@ -99,14 +99,17 @@ const ChatBot = () => {
     if (!trimmedName || !trimmedEmail || !trimmedPhone) return;
 
     try {
-      const response = await axios.post(`${BACKEND_API_BASE_URL}start_session`, {
-        name: trimmedName,
-        email: trimmedEmail,
-        phone: trimmedPhone,
-      });
+      const response = await axios.post(
+        `${BACKEND_API_BASE_URL}start_session`,
+        {
+          name: trimmedName,
+          email: trimmedEmail,
+          phone: trimmedPhone,
+        }
+      );
 
       const sessionId = response.data.session_id;
-      const welcomeMsg = response.data.message;
+      //const welcomeMsg = response.data.message;
 
       setToLocalStorage(USER_NAME_KEY, trimmedName);
       setToLocalStorage(USER_EMAIL_KEY, trimmedEmail);
@@ -128,7 +131,11 @@ const ChatBot = () => {
   const handleSend = async () => {
     if (!input.trim() || !sessionId || agentJoining) return;
 
-    const userMessage: Message = { message: input, generatedBy: "user", createdAt: new Date().toISOString() };
+    const userMessage: Message = {
+      message: input,
+      generatedBy: "user",
+      createdAt: new Date().toISOString(),
+    };
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
     setLoading(true);
@@ -163,16 +170,16 @@ const ChatBot = () => {
     }
   };
 
-  const sendSummary = async () => {
-    if (!sessionId) return;
-    try {
-      await axios.post(`${BACKEND_API_BASE_URL}send_pdf_summary`, {
-        session_id: sessionId,
-      });
-    } catch (err) {
-      console.error("Failed to send summary PDF:", err);
-    }
-  };
+  // const sendSummary = async () => {
+  //   if (!sessionId) return;
+  //   try {
+  //     await axios.post(`${BACKEND_API_BASE_URL}send_pdf_summary`, {
+  //       session_id: sessionId,
+  //     });
+  //   } catch (err) {
+  //     console.error("Failed to send summary PDF:", err);
+  //   }
+  // };
 
   const handleCalendlyClick = async () => {
     if (!sessionId) return;
@@ -208,20 +215,18 @@ const ChatBot = () => {
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-blue-100 via-white to-purple-100 px-4 py-20">
       {isUserAuthenticated ? (
-        <div className="w-full max-w-3xl">
-          <ChatUI
-            loading={loading}
-            user={user}
-            messages={messages}
-            input={input}
-            setInput={setInput}
-            onSend={handleSend}
-            onLogout={handleLogout}
-            onCalendlyClick={handleCalendlyClick}
-            agentJoining={agentJoining}
-            currentAgent={currentAgent}
-          />
-        </div>
+        <ChatUI
+          loading={loading}
+          user={user}
+          messages={messages}
+          input={input}
+          setInput={setInput}
+          onSend={handleSend}
+          onLogout={handleLogout}
+          onCalendlyClick={handleCalendlyClick}
+          agentJoining={agentJoining}
+          currentAgent={currentAgent}
+        />
       ) : (
         <LoginForm
           user={user}

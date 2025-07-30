@@ -12,7 +12,7 @@ interface LoginFormProps {
   onSubmit: (e: React.FormEvent) => void;
 }
 const LoginForm: React.FC<LoginFormProps> = ({ user, onChange, onSubmit }) => (
-  <div className="w-full max-w-md">
+  <div className="w-full max-w-md lg:mt-16">
     <form
       onSubmit={onSubmit}
       className="w-full bg-white border border-gray-200 p-8 rounded-2xl shadow-xl space-y-6"
@@ -41,6 +41,19 @@ const LoginForm: React.FC<LoginFormProps> = ({ user, onChange, onSubmit }) => (
           name="email"
           placeholder="Your Email"
           value={user.email}
+          onChange={onChange}
+          className="w-full pl-10 pr-4 py-3 border focus:border-primary rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300"
+          required
+        />
+      </div>
+      
+      <div className="relative">
+        <FiPhone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Your Phone Number"
+          value={user.phone}
           onChange={onChange}
           className="w-full pl-10 pr-4 py-3 border focus:border-primary rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300"
           required
