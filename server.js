@@ -47,13 +47,16 @@ const updateSessionActivity = (sessionId) => {
 // Set up periodic check for inactive sessions (every minute)
 setInterval(checkInactiveSessions, 60000);
 
+const SMTP_EMAIL = process.env.SMTP_EMAIL
+const SMTP_PASSWORD = process.env.SMTP_PASSWORD
+
 // Email transporter
 const createTransporter = () => {
     return nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: process.env.SMTP_EMAIL,
-            pass: process.env.SMTP_PASSWORD
+            user: SMTP_EMAIL,
+            pass: SMTP_PASSWORD
         }
     });
 };
@@ -495,7 +498,7 @@ const sendPDFSummary = async (sessionId) => {
         emailContent += `📅 Schedule consultation: https://calendly.com/smartinstallersnyc`;
 
         await transporter.sendMail({
-            from: process.env.SMTP_EMAIL,
+            from: SMTP_EMAIL,
             to: session.email,
             subject: emailSubject,
             text: emailContent,
@@ -680,7 +683,7 @@ app.get('/health', (req, res) => {
 
 app.listen(port, () => {
     console.log(`🚀 Legal Chatbot API running on port ${port}`);
-    console.log(`📧 Email: ${process.env.SMTP_EMAIL ? 'Configured' : 'Not configured'}`);
+    console.log(`📧 Email: ${SMTP_EMAIL ? 'Configured' : 'Not configured'}`);
     console.log(`🤖 OpenAI: ${OPENAI_API_KEY ? 'Configured' : 'Not configured'}`);
     console.log(`📅 Calendly: ${CALENDLY_URL}`);
 }); 
