@@ -99,6 +99,8 @@ const ChatBot = () => {
     if (!trimmedName || !trimmedEmail || !trimmedPhone) return;
 
     try {
+      console.log("BACKEND_API_BASE_URL ", BACKEND_API_BASE_URL)
+
       const response = await axios.post(`${BACKEND_API_BASE_URL}start_session`, {
         name: trimmedName,
         email: trimmedEmail,
@@ -106,7 +108,7 @@ const ChatBot = () => {
       });
 
       const sessionId = response.data.session_id;
-      const welcomeMsg = response.data.message;
+      // const welcomeMsg = response.data.message;
 
       setToLocalStorage(USER_NAME_KEY, trimmedName);
       setToLocalStorage(USER_EMAIL_KEY, trimmedEmail);
@@ -163,16 +165,16 @@ const ChatBot = () => {
     }
   };
 
-  const sendSummary = async () => {
-    if (!sessionId) return;
-    try {
-      await axios.post(`${BACKEND_API_BASE_URL}send_pdf_summary`, {
-        session_id: sessionId,
-      });
-    } catch (err) {
-      console.error("Failed to send summary PDF:", err);
-    }
-  };
+  // const sendSummary = async () => {
+  //   if (!sessionId) return;
+  //   try {
+  //     await axios.post(`${BACKEND_API_BASE_URL}send_pdf_summary`, {
+  //       session_id: sessionId,
+  //     });
+  //   } catch (err) {
+  //     console.error("Failed to send summary PDF:", err);
+  //   }
+  // };
 
   const handleCalendlyClick = async () => {
     if (!sessionId) return;

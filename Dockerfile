@@ -4,8 +4,6 @@ RUN apk add --no-cache openssl
 
 WORKDIR /usr/src/app
 
-ENV PORT ""
-
 ENV OPENAI_API_KEY ""
 
 ENV JWT_SECRET ""
