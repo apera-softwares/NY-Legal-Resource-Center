@@ -101,7 +101,7 @@ const ChatBot = () => {
     try {
       console.log("BACKEND_API_BASE_URL ", BACKEND_API_BASE_URL)
 
-      const response = await axios.post(`${BACKEND_API_BASE_URL}chat/start_session`, {
+      const response = await axios.post(`${BACKEND_API_BASE_URL}chat/start-session`, {
         name: trimmedName,
         email: trimmedEmail,
         phone: trimmedPhone,
