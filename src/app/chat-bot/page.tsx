@@ -137,7 +137,7 @@ const ChatBot = () => {
 
     try {
       const response = await axios.post(`${BACKEND_API_BASE_URL}chat/start-conversation`, {
-        session_id: sessionId,
+        sessionId: sessionId,
         message: input,
       });
 
@@ -190,7 +190,7 @@ const ChatBot = () => {
   const handleLogout = async () => {
     try {
       await axios.post(`${BACKEND_API_BASE_URL}chat/logout`, {
-        session_id: sessionId,
+        sessionId: sessionId,
       });
     } catch (err) {
       console.error("Failed to send PDF on logout:", err);
