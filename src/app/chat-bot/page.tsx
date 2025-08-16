@@ -101,7 +101,7 @@ const ChatBot = () => {
     try {
       console.log("BACKEND_API_BASE_URL ", BACKEND_API_BASE_URL)
 
-      const response = await axios.post(`${BACKEND_API_BASE_URL}start_session`, {
+      const response = await axios.post(`${BACKEND_API_BASE_URL}chat/start_session`, {
         name: trimmedName,
         email: trimmedEmail,
         phone: trimmedPhone,
@@ -136,7 +136,7 @@ const ChatBot = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post(`${BACKEND_API_BASE_URL}chat`, {
+      const response = await axios.post(`${BACKEND_API_BASE_URL}chat/start-conversation`, {
         session_id: sessionId,
         message: input,
       });
@@ -189,7 +189,7 @@ const ChatBot = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.post(`${BACKEND_API_BASE_URL}logout`, {
+      await axios.post(`${BACKEND_API_BASE_URL}chat/logout`, {
         session_id: sessionId,
       });
     } catch (err) {
