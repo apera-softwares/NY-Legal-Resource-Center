@@ -107,7 +107,7 @@ const ChatBot = () => {
         phone: trimmedPhone,
       });
 
-      const sessionId = response.data.session_id;
+      const sessionId = response.data.sessionId;
       // const welcomeMsg = response.data.message;
 
       setToLocalStorage(USER_NAME_KEY, trimmedName);
