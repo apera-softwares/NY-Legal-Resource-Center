@@ -179,7 +179,7 @@ const ChatBot = () => {
   const handleCalendlyClick = async () => {
     if (!sessionId) return;
     try {
-      await axios.post(`${BACKEND_API_BASE_URL}calendly_clicked`, {
+      await axios.post(`${BACKEND_API_BASE_URL}calendly-clicked`, {
         session_id: sessionId,
       });
     } catch (err) {
