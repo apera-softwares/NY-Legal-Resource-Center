@@ -179,8 +179,8 @@ const ChatBot = () => {
   const handleCalendlyClick = async () => {
     if (!sessionId) return;
     try {
-      await axios.post(`${BACKEND_API_BASE_URL}calendly_clicked`, {
-        session_id: sessionId,
+      await axios.post(`${BACKEND_API_BASE_URL}chat/calendly-clicked`, {
+        sessionId: sessionId,
       });
     } catch (err) {
       console.error("Failed to send PDF on Calendly click:", err);
