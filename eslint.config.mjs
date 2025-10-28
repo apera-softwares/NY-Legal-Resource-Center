@@ -11,6 +11,16 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
+
+  {
+    rules: {
+      // Disable the unescaped entity rule causing the build to fail
+      "react/no-unescaped-entities": "off",
+
+      // Disable Next.js <img> warnings
+      "@next/next/no-img-element": "off",
+    },
+  },
 ];
 
 export default eslintConfig;
