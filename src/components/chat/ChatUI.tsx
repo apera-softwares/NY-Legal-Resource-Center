@@ -1,6 +1,7 @@
 "use client";
 import { FiSend } from "react-icons/fi";
 import { useEffect, useRef } from "react";
+import { TbLogout2 } from "react-icons/tb";
 
 interface Message {
   message: string;
@@ -59,8 +60,9 @@ const ChatUI: React.FC<ChatUIProps> = ({
         {/* 🔹 Logout Button (Same Style as Send Button) */}
         <button
           onClick={onLogout}
-          className="absolute top-4 right-6 cursor-pointer bg-gradient-to-r from-primary to-primary-hover text-white px-4 py-2 rounded-full font-medium tracking-wide shadow-md hover:scale-105 hover:shadow-lg transition-all duration-300"
+          className="absolute flex gap-2 items-center top-4 right-6 cursor-pointer bg-gradient-to-r from-primary to-primary-hover text-white px-4 py-2 rounded-full font-medium tracking-wide shadow-md hover:scale-105 hover:shadow-lg transition-all duration-300"
         >
+          <TbLogout2 />
           Logout
         </button>
 
@@ -91,8 +93,8 @@ const ChatUI: React.FC<ChatUIProps> = ({
               >
                 <div
                   className={`max-w-[80%] px-4 py-3 rounded-2xl text-sm leading-relaxed shadow-sm ${msg.generatedBy === "user"
-                      ? "bg-gradient-to-r from-primary to-primary-hover text-white rounded-br-none"
-                      : "bg-gray-100 text-gray-800 rounded-bl-none"
+                    ? "bg-gradient-to-r from-primary to-primary-hover text-white rounded-br-none"
+                    : "bg-gray-100 text-gray-800 rounded-bl-none"
                     }`}
                 >
                   {msg.message.split("\n").map((line, lineIndex) => (
@@ -197,8 +199,8 @@ const ChatUI: React.FC<ChatUIProps> = ({
             onClick={onSend}
             disabled={agentJoining || sessionEnded}
             className={`h-12 w-12 flex items-center justify-center rounded-full text-white shadow-md cursor-pointer transition-all duration-300 ${agentJoining
-                ? "bg-gray-300 cursor-not-allowed"
-                : "bg-gradient-to-r from-primary to-primary-hover hover:scale-105 hover:shadow-lg"
+              ? "bg-gray-300 cursor-not-allowed"
+              : "bg-gradient-to-r from-primary to-primary-hover hover:scale-105 hover:shadow-lg"
               }`}
           >
             <FiSend size={22} />
