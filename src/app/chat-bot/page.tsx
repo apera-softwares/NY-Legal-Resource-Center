@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import {
   setToLocalStorage,
@@ -9,6 +9,7 @@ import {
 import { BACKEND_API_BASE_URL } from "@/config/api";
 import LoginForm from "@/components/auth/LoginForm";
 import ChatUI from "@/components/chat/ChatUI";
+import { usePathname } from "next/navigation";
 
 interface Message {
   message: string;
@@ -25,11 +26,9 @@ const ChatBot = () => {
   const [loading, setLoading] = useState(false);
   const [agentJoining, setAgentJoining] = useState(false);
   const [currentAgent, setCurrentAgent] = useState("");
-  const [sessionEnded, setSessionEnded] = useState(false); // 🆕 new
+  const [sessionEnded, setSessionEnded] = useState(false);
 
-
-
-  console.log(isUserAuthenticated, "isUserAuthenticated")
+  const isRefreshingSession = useRef(false); // ✅ prevents multiple auto-refreshes
 
   const USER_NAME_KEY = "authUserName";
   const USER_EMAIL_KEY = "authUserEmail";
@@ -44,25 +43,124 @@ const ChatBot = () => {
     "Sarah Williams",
   ];
 
-  useEffect(() => {
-    const name = getFromLocalStorage(USER_NAME_KEY);
-    const email = getFromLocalStorage(USER_EMAIL_KEY);
-    const phone = getFromLocalStorage(USER_PHONE_KEY);
-    const storedSessionId = getFromLocalStorage(SESSION_ID_KEY);
+  // ✅ Restore user and session
 
-    if (name && email && phone && storedSessionId) {
-      setUser({ name, email, phone });
-      setSessionId(storedSessionId);
+  console.log(user, "user")
+  const pathname = usePathname(); // ✅ detect route change
+
+  useEffect(() => {
+    const restoreUserAndSession = () => {
+      const name = getFromLocalStorage(USER_NAME_KEY);
+      const email = getFromLocalStorage(USER_EMAIL_KEY);
+      const phone = getFromLocalStorage(USER_PHONE_KEY);
+      const storedSessionId = getFromLocalStorage(SESSION_ID_KEY);
+
+      console.log("Restoring session:", { name, email, phone, storedSessionId });
+
+      if (name && email && phone && storedSessionId) {
+        setUser({ name, email, phone });
+        setSessionId(storedSessionId);
+        setIsUserAuthenticated(true);
+      } else {
+        console.warn("No user session found in localStorage.");
+      }
+    };
+
+    // Run immediately and also re-run after route changes
+    restoreUserAndSession();
+
+    // Sometimes localStorage might not be ready instantly after route change
+    const timeout = setTimeout(restoreUserAndSession, 300);
+
+    return () => clearTimeout(timeout);
+  }, [pathname]); // ✅ triggers when you change route
+
+
+
+
+  // ✅ Check if session has expired (runs once on mount)
+  useEffect(() => {
+    const checkSessionValidity = async () => {
+      if (!sessionId || !isUserAuthenticated) return;
+
+      try {
+        const response = await axios.get(
+          `${BACKEND_API_BASE_URL}chat/session/${sessionId}`
+        );
+
+        console.log(response.data, "Session check response");
+
+        const isEnded = response.data?.status === false; // backend returns true if 
+        console.log(response.data, "response.data")
+
+
+        if (isEnded && !isRefreshingSession.current) {
+          console.log("Session expired — creating a new session...");
+          isRefreshingSession.current = true; // prevent multiple triggers
+          setSessionEnded(true);
+
+          const name = getFromLocalStorage(USER_NAME_KEY);
+          const email = getFromLocalStorage(USER_EMAIL_KEY);
+          const phone = getFromLocalStorage(USER_PHONE_KEY);
+
+          if (name && email && phone) {
+            setMessages((prev) => [
+              ...prev,
+              {
+                message:
+                  "⚠️ Your previous session has expired. Starting a new chat session...",
+                generatedBy: "system",
+                createdAt: new Date().toISOString(),
+              },
+            ]);
+
+            await startNewSession(name, email, phone);
+          }
+        }
+      } catch (error) {
+        console.error("Failed to check session status:", error);
+      }
+    };
+
+    checkSessionValidity();
+  }, [isUserAuthenticated]); // ✅ only once after user is authenticated
+
+  // ✅ Helper function to start a new session
+  const startNewSession = async (name: string, email: string, phone: string) => {
+    try {
+      const response = await axios.post(`${BACKEND_API_BASE_URL}chat/start-session`, {
+        name,
+        email,
+        phone,
+      });
+
+      const newSessionId = response.data.sessionId;
+      console.log("New session started:", newSessionId);
+      setToLocalStorage(USER_NAME_KEY, name);
+      setToLocalStorage(USER_EMAIL_KEY, email);
+      setToLocalStorage(USER_PHONE_KEY, phone);
+      setToLocalStorage(SESSION_ID_KEY, newSessionId);
+
+      setUser({ name: name, email: email, phone: phone });
+      setSessionId(newSessionId);
+      setMessages([]);
       setIsUserAuthenticated(true);
+      setSessionEnded(false); // 🆕 reset when new session starts
+      simulateAgentJoining();
+      isRefreshingSession.current = false; // allow future checks again
+    } catch (error) {
+      console.error("Error creating new session:", error);
+      isRefreshingSession.current = false;
     }
-  }, []);
+  };
 
   const handleUserInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
   const simulateAgentJoining = async () => {
-    const randomAgent = agentNames[Math.floor(Math.random() * agentNames.length)];
+    const randomAgent =
+      agentNames[Math.floor(Math.random() * agentNames.length)];
     const randomWaitTime = Math.floor(Math.random() * 5000) + 2000;
 
     setCurrentAgent("");
@@ -95,29 +193,8 @@ const ChatBot = () => {
     const trimmedPhone = user.phone.trim();
     if (!trimmedName || !trimmedEmail || !trimmedPhone) return;
 
-    try {
-      const response = await axios.post(`${BACKEND_API_BASE_URL}chat/start-session`, {
-        name: trimmedName,
-        email: trimmedEmail,
-        phone: trimmedPhone,
-      });
-
-      const sessionId = response.data.sessionId;
-      setToLocalStorage(USER_NAME_KEY, trimmedName);
-      setToLocalStorage(USER_EMAIL_KEY, trimmedEmail);
-      setToLocalStorage(USER_PHONE_KEY, trimmedPhone);
-      setToLocalStorage(SESSION_ID_KEY, sessionId);
-
-      setUser({ name: trimmedName, email: trimmedEmail, phone: trimmedPhone });
-      setSessionId(sessionId);
-      setMessages([]);
-      setIsUserAuthenticated(true);
-      setSessionEnded(false); // 🆕 reset when new session starts
-
-      simulateAgentJoining();
-    } catch (error) {
-      console.error("Error starting session:", error);
-    }
+    await startNewSession(trimmedName, trimmedEmail, trimmedPhone);
+    setIsUserAuthenticated(true);
   };
 
   const handleSend = async () => {
@@ -133,10 +210,13 @@ const ChatBot = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post(`${BACKEND_API_BASE_URL}chat/start-conversation`, {
-        sessionId,
-        message: input,
-      });
+      const response = await axios.post(
+        `${BACKEND_API_BASE_URL}chat/start-conversation`,
+        {
+          sessionId,
+          message: input,
+        }
+      );
 
       const systemReply: Message = {
         message: response.data.reply,
@@ -145,7 +225,6 @@ const ChatBot = () => {
       };
       setMessages((prev) => [...prev, systemReply]);
 
-      // 🆕 Calendly link triggers session end
       if (response.data.calendly) {
         const calendlyMessage: Message = {
           message: `📅 Schedule a Consultation\n\nI'd be happy to help you further. You can schedule a consultation with our legal team using the link below:\n\nSchedule Appointment: ${response.data.calendly}`,
@@ -153,15 +232,6 @@ const ChatBot = () => {
           createdAt: new Date().toISOString(),
         };
         setMessages((prev) => [...prev, calendlyMessage]);
-
-        // Add final “session over” message
-        const endMessage: Message = {
-          message: "✅ Your session is over. Please book your consultation using the Calendly link above.",
-          generatedBy: "system",
-          createdAt: new Date().toISOString(),
-        };
-        setMessages((prev) => [...prev, endMessage]);
-        setSessionEnded(true); // 🆕 Disable input
       }
     } catch (error) {
       console.error("Error during chat:", error);
@@ -173,7 +243,9 @@ const ChatBot = () => {
   const handleCalendlyClick = async () => {
     if (!sessionId) return;
     try {
-      await axios.post(`${BACKEND_API_BASE_URL}chat/calendly-clicked`, { sessionId });
+      await axios.post(`${BACKEND_API_BASE_URL}chat/calendly-clicked`, {
+        sessionId,
+      });
     } catch (err) {
       console.error("Failed to send PDF on Calendly click:", err);
     }
@@ -213,7 +285,7 @@ const ChatBot = () => {
             onCalendlyClick={handleCalendlyClick}
             agentJoining={agentJoining}
             currentAgent={currentAgent}
-            sessionEnded={sessionEnded} // 🆕 pass prop
+            sessionEnded={sessionEnded}
           />
         </div>
       ) : (
